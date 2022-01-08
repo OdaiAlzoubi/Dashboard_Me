@@ -1,0 +1,77 @@
+@extends('layouts.layout')
+
+@section('PageName', 'User')
+
+@section('content')
+
+
+    {{-- Alert Messages --}}
+    @include('common.alert')
+
+    <div class="card-header pb-0">
+        <h6>Authors table
+
+            <div>
+                <a href="{{ route('user.index') }}" class="btn btn-secondary" aria-current="page">Back</a>
+            </div>
+
+        </h6>
+    </div>
+    <div class="card-body px-0 pt-0 pb-2">
+        <div class="table-responsive p-0">
+
+            <table class="table align-items-center mb-0r">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach ($users as $user)
+                        <tr>
+                            <th scope="row">
+                                <p>{{ ++$count }}</p>
+                            </th>
+                            <td>
+                                <h6 class="card-title container">{{ $user->f_name . ' ' . $user->l_name }}</h6>
+                            </td>
+                            <td>
+                                <img src="{{ asset('image/user/' . $user->image) }}" class="border-radius-lg shadow" alt="..."
+                                    width="70px" height="70px">
+                            </td>
+                            <td>
+                                <p class="card-title container">{{ $user->gender }}</p>
+                            </td>
+                            <td>
+                                {{--  --}}
+                                <div class="btn-group">
+                                    <a href="{{ route('user.show', $user->id) }}" class="btn btn-primary"
+                                        aria-current="page">Show</a>
+                                    <form action="{{ route('user.back.soft.delete', $user->id) }}" method="post">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">Back Soft Delete</button>
+                                    </form>
+
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+    {{ $users->links() }}
+@endsection
