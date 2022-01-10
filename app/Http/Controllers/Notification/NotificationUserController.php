@@ -11,12 +11,9 @@ class NotificationUserController extends Controller
     //
     public function addUser()
     {
-        $users = User::whereNull('deleted_at')->latest(
-            'f_name',
-            'l_name',
-            'gender',
-            'phone'
-        )->paginate(4);
+        $users = User::whereNull('deleted_at')->where('email_validate','=','1')->latest(
+            'id'
+        )->paginate(10);
         $count = 0;
         return view('notification.user', compact('users', 'count'))->with('i', (request()->input('page', 1) - 1) * 5);
     }

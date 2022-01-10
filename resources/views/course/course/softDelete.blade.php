@@ -15,14 +15,16 @@
 
 
     <div class="card-header pb-0">
-        <h6>Authors table
-
-            <div>
+        <div class="row">
+            <div class="col-6 d-flex align-items-center">
+                <h6>Soft Delete Courses</h6>
+            </div>
+            <div class="col-6 text-end">
                 <a href="{{ route('Course.index') }}" class="btn btn-secondary" aria-current="page">Back</a>
             </div>
-
-        </h6>
+        </div>
     </div>
+
     <div class="card-body px-0 pt-0 pb-2">
         <div class="table-responsive p-0">
 
@@ -47,7 +49,7 @@
                                 <p>{{ ++$count }}</p>
                             </th>
                             <td>
-                                <img src="{{ asset('image/course/' . $course->image) }}" class="border-radius-lg shadow " alt="..."
+                                <img src="{{ asset('image/course/' . $course->image) }}" class="border-radius-lg shadow " alt=""
                                     width="70px" height="70px">
 
                             </td>

@@ -10,16 +10,17 @@
 
 
     <div class="card-header pb-0">
-        <h6>Authors table
-
-            {{-- Soft Delete --}}
-            <div>
-                <a href="{{ route('user.soft.delete.show') }}" class="btn btn-info" aria-current="page">Soft
-                    Delete</a>
+        <div class="row">
+            <div class="col-6 d-flex align-items-center">
+                <h6>User</h6>
             </div>
-
-        </h6>
+            {{-- Soft Delete --}}
+            <div class="col-6 text-end">
+                <a href="{{ route('user.soft.delete.show') }}" class="btn btn-info" aria-current="page">Soft Delete</a>
+            </div>
+        </div>
     </div>
+
     <div class="card-body px-0 pt-0 pb-2">
         <div class="table-responsive p-0">
 
@@ -44,7 +45,7 @@
                                 <h6 class="card-title container">{{ $user->f_name . ' ' . $user->l_name }}</h6>
                             </td>
                             <td>
-                                <img src="{{ asset('image/user/' . $user->image) }}" class="border-radius-lg shadow" alt="..."
+                                <img src="{{ asset('image/user/' . $user->image) }}" class="border-radius-lg shadow" alt=""
                                     width="70px" height="70px">
                             </td>
                             <td>

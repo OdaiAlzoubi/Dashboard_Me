@@ -12,19 +12,18 @@
 
 
     <div class="card-header pb-0">
-        <h6>Authors table
-
-            <div>
+        <div class="row">
+            <div class="col-6 d-flex align-items-center">
+                <h6>Video</h6>
+            </div>
+            <div class="col-6 text-end">
                 <a href="{{ route('video.create') }}" class="btn btn-primary">Add video to Course</a>
             </div>
-
-        </h6>
+        </div>
     </div>
+
     <div class="card-body px-0 pt-0 pb-2">
         <div class="table-responsive p-0">
-
-
-
 
             <table class="table align-items-center mb-0r">
                 <thead>
@@ -49,12 +48,13 @@
                                 <h6 class="card-title container">{{ $video->name }}</h6>
                             </td>
                             <td>
-
-                                <iframe width="70" height="70"
-                                    src="https://www.youtube-nocookie.com/embed/{{ $video->url }}"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
+                                <div>
+                                    <iframe width="70" height="70"
+                                        src="https://www.youtube-nocookie.com/embed/{{ $video->url }}"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
                             </td>
                             <td>
                                 <h6 class="card-title container">{{ $video->video_Order }}</h6>

@@ -15,18 +15,18 @@
 
 
     <div class="card-header pb-0">
-        <h6>Authors table
-
-            {{-- Soft Delete --}}
-            <div>
-                <a href="{{ route('categoryProduct.index') }}" class="btn btn-secondary" aria-current="page">Back</a>
-
-                <a href="{{ route('product.soft.delete.show') }}" class="btn btn-primary" aria-current="page">Soft
-                    Delete</a>
+        <div class="row">
+            <div class="col-6 d-flex align-items-center">
+                <h6>Authors table</h6>
             </div>
-
-        </h6>
+            {{-- Soft Delete --}}
+            <div class="col-6 text-end">
+                <a href="{{ route('categoryProduct.index') }}" class="btn btn-secondary" aria-current="page">Back</a>
+                <a href="{{ route('product.soft.delete.show') }}" class="btn btn-primary" aria-current="page">Soft Delete</a>
+            </div>
+        </div>
     </div>
+
     <div class="card-body px-0 pt-0 pb-2">
         <div class="table-responsive p-0">
 

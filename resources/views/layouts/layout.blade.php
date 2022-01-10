@@ -39,6 +39,8 @@
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+
+
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">

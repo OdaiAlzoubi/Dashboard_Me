@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 
-@section('PageName', 'Show Course, Category Course')
+@section('title', 'Show Courses, Category Course')
+@section('PageName', 'Show Courses, Category Course')
 
 @section('content')
 
@@ -16,20 +17,22 @@
 
 
     <div class="card-header pb-0">
-        <h6>Authors table
+        <div class="row">
+            <div class="col-6 d-flex align-items-center">
+                <h6>Show Courses</h6>
+            </div>
 
 
             {{-- Soft Delete --}}
-            <div>
+            <div class="col-6 text-end">
                 <a href="{{ route('categoryCourse.index') }}" class="btn btn-secondary" aria-current="page">Back</a>
                 <a href="{{ route('course.create') }}" class="btn btn-primary">Add Course</a>
                 {{-- <a href="{{ route('course.soft.delete.show') }}" class="btn btn-info"
                     aria-current="page">Soft Delete</a> --}}
             </div>
-
-
-        </h6>
+        </div>
     </div>
+
     <div class="card-body px-0 pt-0 pb-2">
         <div class="table-responsive p-0">
 
@@ -57,7 +60,7 @@
                                 <p>{{ ++$count }}</p>
                             </th>
                             <td>
-                                <img src="{{ asset('image/course/' . $course->image) }}" class="border-radius-lg shadow " alt="..."
+                                <img src="{{ asset('image/course/' . $course->image) }}" class="border-radius-lg shadow " alt=""
                                     width="70px" height="70px">
 
                             </td>
