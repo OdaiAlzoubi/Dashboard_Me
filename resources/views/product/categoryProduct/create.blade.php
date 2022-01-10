@@ -6,7 +6,7 @@
 
 @section('content')
 
-
+@include('common.alert')
 
     <form action="{{ route('categoryProduct.store') }}" method="post" enctype="multipart/form-data" class="container mt-5">
         @csrf

@@ -18,7 +18,7 @@
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold"> Last 28 days Product </p>
                                 <h5 class="font-weight-bolder mb-0">
                                     {{ $productCountDate }}
-                                    <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                    {{-- <span class="text-success text-sm font-weight-bolder">+55%</span> --}}
                                 </h5>
                             </div>
                         </div>
@@ -40,7 +40,7 @@
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Last 28 days Users</p>
                                 <h5 class="font-weight-bolder mb-0">
                                     {{ $userCountDate }}
-                                    <span class="text-success text-sm font-weight-bolder">+3%</span>
+                                    {{-- <span class="text-success text-sm font-weight-bolder">+3%</span> --}}
                                 </h5>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Last 28 Join Courses</p>
                                 <h5 class="font-weight-bolder mb-0">
                                     {{ $joinCoursesCountDate }}
-                                    <span class="text-danger text-sm font-weight-bolder">-2%</span>
+                                    {{-- <span class="text-danger text-sm font-weight-bolder">-2%</span> --}}
                                 </h5>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Sales</p>
                                 <h5 class="font-weight-bolder mb-0">
                                     $103,430
-                                    <span class="text-success text-sm font-weight-bolder">+5%</span>
+                                    {{-- <span class="text-success text-sm font-weight-bolder">+5%</span> --}}
                                 </h5>
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                                     <th scope="col">Name</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Category</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col" class="text-center">Action</th>
                                 </tr>
                             </thead>
 
@@ -146,7 +146,7 @@
                                         </td>
                                         <td>
                                             <img src="{{ asset('image/product/' . $product->image) }}"
-                                                class="border-radius-lg shadow" alt="..." width="70px" height="70px">
+                                                class="border-radius-lg shadow" alt="" width="70px" height="70px">
                                         </td>
                                         <td>
                                             <h6 class="card-title">{{ $product->name }}</h6>
@@ -157,7 +157,7 @@
                                         <td>
                                             <h6 class="card-title">{{ $product->categoryProduct->name }}</h6>
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             {{--  --}}
                                             <div class="btn-group gap-1">
 
@@ -168,9 +168,10 @@
                                                     @csrf
                                                     @method('DELETE')
 
-                                                    {{-- <i type="submit" class="fas fa-minus-square bg-gradient-light  text-primary"></i> --}}
-                                                    <button type="submit" class="btn"><i type="submit"
-                                                            class="fas fa-minus-square text-primary"></i></button>
+                                                    <button type="submit" class="btn btn-link" style="width: 0px; height: 0px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Soft Delete">
+                                            <i class="fas fa-trash" style="color: red ; font-size: 25px; margin-left: -14px;" >&#xE872;</i>
+                                        </button>
                                                 </form>
 
                                             </div>
@@ -211,8 +212,9 @@
                                     <h6 class="card-title">{{ $user->f_name . ' ' . $user->l_name }}</h6>
                                     <p class="mb-0 text-xs">Hi! I need more information..</p>
                                 </div>
-                                <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto"
-                                    href="{{ route('user.show', $user->id) }}">Show</a>
+                                <a href="{{ route('user.show', $user->id) }}" class="btn btn-link pe-3 ps-0 mb-0 ms-auto">
+                                    <i class="fas fa-eye" style="color: #0dcaf0 ; font-size: 25px; margin-left: -18px;"></i>
+                                </a>
                             </li>
                         @endforeach
                     </ul>

@@ -46,8 +46,8 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=>'required|max:50|regex:/^[a-zA-Z]+$/u',
-            'presenter'=>'required|max:50|regex:/^[a-zA-Z]+$/u',
+            'name'=>'required|max:50|regex:/^[a-zA-Z]+$/u|string',
+            'presenter'=>'required|max:50|regex:/^[a-zA-Z]+$/u|string',
             'description'=>'nullable|max:1000',
             'image'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'category'=>'required'
@@ -114,8 +114,8 @@ class CourseController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name'=>'required|max:50|regex:/^[a-zA-Z]+$/u',
-            'presenter'=>'required|max:50|regex:/^[a-zA-Z]+$/u',
+            'name'=>'required|max:50|regex:/^[a-zA-Z]+$/u|string',
+            'presenter'=>'required|max:50|regex:/^[a-zA-Z]+$/u|string',
             'description'=>'nullable|max:1000',
             'image'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'category'=>'required'

@@ -379,7 +379,7 @@
                         <span class="nav-link-text ms-1">Logout</span>
                     </a>
                 </li>
-                @if (Auth::user()->role <= 1)
+                @if (Auth::user()->role < 1)
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('admin/create*') ? 'active' : '' }} " href="{{ route('admin.create') }}">
                         <div

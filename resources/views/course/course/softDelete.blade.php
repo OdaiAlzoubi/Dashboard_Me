@@ -35,7 +35,7 @@
                         <th scope="col">Presenter</th>
                         <th scope="col">Description</th>
                         <th scope="col">Category</th>
-                        <th scope="col">Action</th>
+                        <th scope="col" class="text-center">Action</th>
                     </tr>
                 </thead>
 
@@ -63,26 +63,23 @@
                             <td>
                                 <p class="card-text">{{ $course->categoryCourse->name }}</p>
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{--  --}}
                                 <div class="btn-group gap-1">
 
                                     {{-- <a href="{{ route('course.show', $course->id) }}" class="btn btn-primary"
                                             aria-current="page">Show</a> --}}
-                                    <a href="{{ route('course.back.soft.delete', $course->id) }}"
-                                        class="btn btn-success">Back</a>
+                                    <a href="{{ route('course.back.soft.delete', $course->id) }}" class="btn btn-link" style="width: 0px; height: 0px;"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Back Soft Delete">
+                                        <i class="fas fa-undo" style=" font-size: 25px; margin-left: -14px;"></i>
+                                    </a>
                                     <form action="{{ route('course.delete', $course->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                <path
-                                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                                            </svg>
-                                        </button>
+                                        <button type="submit" class="btn btn-link" style="width: 0px; height: 0px;"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+                                    <i class="fas fa-trash" style="color: red ; font-size: 30px; margin-left: -14px;" >&#xE872;</i>
+                                </button>
                                     </form>
                                 </div>
                             </td>

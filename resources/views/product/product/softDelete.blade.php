@@ -41,7 +41,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">Description</th>
                         <th scope="col">Category</th>
-                        <th scope="col">Action</th>
+                        <th scope="col" class="text-center">Action</th>
                     </tr>
                 </thead>
 
@@ -68,18 +68,26 @@
                             <td>
                                 <h6 class="card-title container">{{ $product->categoryProduct->name }}</h6>
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{--  --}}
                                 <div class="btn-group">
 
-                                    <a href="{{ route('product.show', $product->id) }}" class="btn btn-primary"
-                                        aria-current="page">Show</a>
-                                    <a href="{{ route('product.back.soft.delete', $product->id) }}"
-                                        class="btn btn-primary" aria-current="page">Back</a>
+                                    <a href="{{ route('product.show', $product->id) }}" class="btn btn-link" style="width: 0px; height: 0px;"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Show">
+                                        <i class="fas fa-eye" style="color: #0dcaf0 ; font-size: 25px; margin-left: -18px;"></i>
+                                    </a>
+                                    <a href="{{ route('product.back.soft.delete', $product->id) }}" class="btn btn-link" style="width: 0px; height: 0px;"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Back Soft Delete">
+                                        <i class="fas fa-undo" style=" font-size: 25px; margin-left: -14px;"></i>
+                                    </a>
+
                                     <form action="{{ route('product.delete', $product->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        <button type="submit" class="btn btn-link"style="width: 0px; height: 0px;"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+                                        <i class="fas fa-trash" style="color: red ; font-size: 25px; margin-left: -14px;" >&#xE872;</i>
+                                    </button>
                                     </form>
                                 </div>
                             </td>

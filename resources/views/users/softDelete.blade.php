@@ -27,7 +27,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">Image</th>
                         <th scope="col">Gender</th>
-                        <th scope="col">Action</th>
+                        <th scope="col" class="text-center">Action</th>
                     </tr>
                 </thead>
 
@@ -47,14 +47,19 @@
                             <td>
                                 <p class="card-title container">{{ $user->gender }}</p>
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{--  --}}
                                 <div class="btn-group">
-                                    <a href="{{ route('user.show', $user->id) }}" class="btn btn-primary"
-                                        aria-current="page">Show</a>
+                                    <a href="{{ route('user.show', $user->id) }}" class="btn btn-link" style="width: 0px; height: 0px;"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Show">
+                                        <i class="fas fa-eye" style="color: #0dcaf0 ; font-size: 25px; margin-left: -18px;"></i>
+                                    </a>
                                     <form action="{{ route('user.back.soft.delete', $user->id) }}" method="post">
                                         @csrf
-                                        <button type="submit" class="btn btn-danger">Back Soft Delete</button>
+                                        <button type="submit" class="btn btn-link" style="width: 0px; height: 0px;"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Back Soft Delete">
+                                            <i class="fas fa-undo" style=" font-size: 25px; margin-left: -14px;"></i>
+                                        </button>
                                     </form>
 
                                 </div>
