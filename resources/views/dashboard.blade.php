@@ -231,8 +231,9 @@
 
 
     {{-- graphical --}}
-    <div class="row">
-        <div class="col-lg-7">
+    <div class="row mt-4">
+        {{-- User --}}
+        <div class="col-lg-6">
             <div class="card z-index-2">
                 {{-- <div class="card-header pb-0">
                     <h6>Highcharts in Laravel 8 Example</h6>
@@ -248,10 +249,20 @@
                 </div>
             </div>
         </div>
+        {{-- Product --}}
+        <div class="col-lg-6">
+            <div class="card z-index-2">
+                <div class="card-body p-3">
+                    <div class="chart">
+                        <div id="container1" class="chart-canvas" height="300"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
     <script src="https://code.highcharts.com/highcharts.js"></script>
 
+    {{-- User --}}
     <script type="text/javascript">
         var userData =
             @php
@@ -287,6 +298,60 @@
             },
             series: [{
                 name: 'New Users',
+                data: userData
+            }],
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+        });
+    </script>
+    {{-- Product --}}
+    <script type="text/javascript">
+        var userData =
+            @php
+            echo json_encode($productData);
+            @endphp;
+
+        Highcharts.chart('container1', {
+            title: {
+                text: 'New Product Growth, 2022'
+            },
+            subtitle: {
+                // text: 'Source: positronx.io'
+            },
+            xAxis: {
+                categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+                    'October', 'November', 'December'
+                ]
+            },
+            yAxis: {
+                title: {
+                    text: 'Number of New Products'
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+            plotOptions: {
+                series: {
+                    allowPointSelect: true
+                }
+            },
+            series: [{
+                name: 'New Products',
                 data: userData
             }],
             responsive: {

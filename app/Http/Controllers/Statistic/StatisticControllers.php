@@ -37,12 +37,17 @@ class StatisticControllers extends Controller
             ->groupBy(DB::raw("Month(create_date)"))
             ->pluck('count');
 
+            $productData = Product::select(DB::raw("COUNT(*) as count"))
+            ->whereYear('product_date', date('Y'))
+            ->groupBy(DB::raw("Month(product_date)"))
+            ->pluck('count');
+
 
 
         return view('dashboard', compact(
             'userCountDate', 'productCountDate','joinCoursesCountDate' ,
             'products', 'userRandom',
-            'userData'
+            'userData' ,'productData'
         ));
     }
 
