@@ -56,9 +56,10 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::where('id', '=', $id)->first();
-        $images = ImageProduct::where('id', '=', $id)->first();
-        $rate = RateProduct::where('id', '=', $id)->first();
-        return view('product.product.show', compact('product', 'images'));
+        $images = ImageProduct::where('id_product', '=', $id)->whereNotNull('image')->get();
+        $rate = RateProduct::where('id_product', '=', $id)->get();
+        // dd($images);
+        return view('product.product.show', compact('product', 'images', 'rate'));
     }
 
     /**
