@@ -141,8 +141,8 @@ Route::middleware('auth')->group(function () {
         Route::prefix('product')->group(function () {
 
             Route::get('/', [ProductController::class, 'index'])->name('product.index');
-            Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
-            Route::delete('/product/{id}', [ProductController::class, 'destroy'])->name('product.delete');
+            Route::get('/show/{id}', [ProductController::class, 'show'])->name('product.show');
+            Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('product.delete');
 
             // Soft Delete
             Route::delete('/soft-delete/{id}', [ProductController::class, 'softDelete'])->name('product.soft.delete');
@@ -168,7 +168,7 @@ Route::middleware('auth')->group(function () {
                 Route::get('/user-acceptance/{id}', [NotificationUserController::class, 'userAcceptance'])->name('user.acceptance.notification');
                 Route::get('/user-refused/{id}', [NotificationUserController::class, 'userRefused'])->name('user.refused.notification');
             });
-            
+
             // Product
             Route::group([], function () {
 
@@ -218,7 +218,7 @@ Route::middleware('auth')->group(function () {
             Route::post('/store', [ProfileController::class, 'store'])->name('admin.store');
             Route::get('/show', [ProfileController::class, 'show'])->name('admin.show');
             Route::post('/soft-delete/{id}', [ProfileController::class, 'softDelete'])->name('admin.soft.delete');
-            Route::post('/back-soft-delete/{id}', [ProfileController::class, 'backFromSoftDelete'])->name('admin.back.soft.delete');
+            Route::get('/back-soft-delete/{id}', [ProfileController::class, 'backFromSoftDelete'])->name('admin.back.soft.delete');
             Route::get('/soft-delete/show', [ProfileController::class, 'softDeleteShow'])->name('admin.soft.delete.show');
             Route::delete('/delete/{id}', [ProfileController::class, 'destroy'])->name('admin.delete');
         });

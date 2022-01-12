@@ -53,7 +53,7 @@
                         <th scope="col">User</th>
                         <th scope="col">Image</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Description</th>
+                        {{-- <th scope="col">Description</th> --}}
                         <th scope="col">Category</th>
                         <th scope="col" class="text-center">Action</th>
                     </tr>
@@ -76,9 +76,9 @@
                             <td>
                                 <h6 class="card-title container">{{ $product->name }}</h6>
                             </td>
-                            <td>
+                            {{-- <td>
                                 <h6 class="card-title container">{{ $product->description }}</h6>
-                            </td>
+                            </td> --}}
                             <td>
                                 <h6 class="card-title container">{{ $product->categoryProduct->name }}</h6>
                             </td>

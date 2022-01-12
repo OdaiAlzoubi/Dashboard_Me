@@ -110,7 +110,7 @@
                             <h6>Product</h6>
                         </div>
                         <div class="col-6 text-end">
-                            <a href="{{ route('product.index') }}" class="btn btn-info float-md-end">
+                            <a href="{{ route('product.index') }}" class="btn float-md-end" style="background-color: #356346; color: white">
                                 See All
                             </a>
                         </div>
@@ -125,7 +125,7 @@
                                     <th scope="col">User</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Description</th>
+                                    {{-- <th scope="col">Description</th> --}}
                                     <th scope="col">Category</th>
                                     <th scope="col" class="text-center">Action</th>
                                 </tr>
@@ -151,12 +151,11 @@
                                         <td class="text-center">
                                             <h6 class="card-title container">{{ $product->name }}</h6>
                                         </td>
-                                        <td style="max-width: 1px " dir="rtl" lang="ar">
-                                            <div class="overflow-auto ">
-
-                                                <h6 class="card-title ">{{ $product->description }}</h6>
+                                        {{-- <td  dir="rtl" lang="ar">
+                                            <div class="overflow-auto " >
+                                                <textarea class="card-title form-control" rows="3">{{ $product->description }}</textarea>
                                             </div>
-                                        </td>
+                                        </td> --}}
                                         <td class="text-center">
                                             <h6 class="card-title ">{{ $product->categoryProduct->name }}</h6>
                                         </td>
@@ -164,9 +163,11 @@
                                             {{--  --}}
                                             <div class="btn-group gap-1">
 
-                                                {{-- <a href="{{ route('product.show', $product->id) }}" class="btn btn-primary"
-                                                    aria-current="page">Show</a> --}}
-                                                <form action="{{ route('product.soft.delete', $product->id) }}"
+                                                <a href="{{ route('product.show', $product->id) }}" class="btn btn-link" style="width: 0px; height: 0px;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Show">
+                                                    <i class="fas fa-eye" style="color: #0dcaf0 ; font-size: 25px; margin-left: -18px;"></i>
+                                                </a>
+                                                {{-- <form action="{{ route('product.soft.delete', $product->id) }}"
                                                     method="post">
                                                     @csrf
                                                     @method('DELETE')
@@ -175,7 +176,7 @@
                                             data-bs-toggle="tooltip" data-bs-placement="top" title="Soft Delete">
                                             <i class="fas fa-trash" style="color: red ; font-size: 25px; margin-left: -14px;" >&#xE872;</i>
                                         </button>
-                                                </form>
+                                                </form> --}}
 
                                             </div>
                                         </td>
@@ -197,7 +198,7 @@
                             <h6>User</h6>
                         </div>
                         <div class="col-6 text-end">
-                            <a href="{{ route('user.index') }}" class="btn btn-info float-md-end">
+                            <a href="{{ route('user.index') }}" class="btn btn-info float-md-end"style="background-color: #356346; color: white">
                                 See All
                             </a>
                         </div>

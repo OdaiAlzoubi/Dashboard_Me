@@ -5,16 +5,13 @@
 
 @section('content')
 
-    <div class="col-lg-7 mb-lg-0 mb-4 container" style="width: auto;">
-
 
         {{-- Alert Messages --}}
         @include('common.alert')
 
-
-        <div class="card">
-            <div class="card-body p-3">
-                <div class="row">
+        <div class="">
+            <div class=" ">
+                <div class="">
 
                     <form action="{{ route('course.store') }}" method="post" enctype="multipart/form-data"
                         class="container mt-5">

@@ -8,13 +8,13 @@
     <!--  -->
 
 
-    <div class="col-lg-7 mb-lg-0 mb-4" style="min-width: -webkit-fill-available;">
+    {{-- <div class="col-lg-7 mb-lg-0 mb-4" style="min-width: -webkit-fill-available;"> --}}
 
         {{-- Alert Messages --}}
         @include('common.alert')
 
-        <div class="card">
-            <div class="card-body p-3">
+        <div class="-">
+            <div class="">
 
                 <form action="{{ route('course.update', $course->id) }}" method="post" enctype="multipart/form-data"
                     class="container mt-5">

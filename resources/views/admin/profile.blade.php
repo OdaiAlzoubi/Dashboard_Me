@@ -143,7 +143,7 @@
                     </div>
                     <div class="card-body p-3">
                         <p class="text-sm">
-                            
+
                         </p>
                         <hr class="horizontal gray-light my-4">
                         <ul class="list-group">
@@ -155,7 +155,7 @@
                                     class="text-dark">Email:</strong>
                                 &nbsp; {{ $admin->email }}</li>
                             <li class="list-group-item border-0 ps-0 text-sm"><strong
-                                    class="text-dark">Location:</strong> &nbsp; USA</li>
+                                    class="text-dark">Gender:</strong> &nbsp; {{$admin->gender}}</li>
                             <li class="list-group-item border-0 ps-0 pb-0">
                                 <strong class="text-dark text-sm">Social:</strong> &nbsp;
                                 <a class="btn btn-facebook btn-simple mb-0 ps-1 pe-2 py-0" href="javascript:;">
@@ -176,8 +176,16 @@
             <div class="col-12 col-xl-4">
                 <div class="card h-100">
                     <div class="card-header pb-0 p-3">
-                        <h6 class="mb-0">Conversations</h6>
-                    </div>
+                        <div class="row">
+                            <div class="col-md-8 d-flex align-items-center">
+                                <h6 class="mb-0">Profile Information</h6>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <a href="{{ route('admin.show') }}" class="btn" style="background-color: #356346; color: white">
+                                    Show
+                                </a>
+                            </div>
+                        </div>                    </div>
                     <div class="card-body p-3">
                         <ul class="list-group">
                             @foreach ($admins as $admin)

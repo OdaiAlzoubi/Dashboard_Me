@@ -28,7 +28,8 @@
                         <p class="mb-0 font-weight-bold text-sm">
                             @if ($admin->role == 0)
                                 {{ 'OWNER' }}
-                        @elseif ($admin->role <= 1) {{ 'Admin' }} @else {{ 'Manager' }} @endif
+                        @elseif ($admin->role <= 1) {{ 'Admin' }} @else {{ 'Manager' }}
+                        @endif
                     </p>
                 </div>
             </div>
@@ -62,22 +63,22 @@
                                 enctype="multipart/form-data" class="container mt-5">
                                 @csrf
                                 @method('PUT')
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control  @error('F_name') is-invalid @enderror"
-                                        name="F_name" placeholder="Name" value="{{ $admin->F_name }}">
-                                    <label for="floatingInput">First Name</label>
-                                    {{-- Error --}}
-                                    @include('common.error', [$name='F_name'])
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control  @error('L_name') is-invalid @enderror"
-                                        name="L_name" placeholder="Name" value="{{ $admin->L_name }}">
-                                    <label for="floatingInput">last Name</label>
-                                    {{-- Error --}}
-                                    @include('common.error', [$name='L_name'])
-                                </div>
-
+                                @if ($admin->role == 0)
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control  @error('F_name') is-invalid @enderror"
+                                            name="F_name" placeholder="Name" value="{{ $admin->F_name }}">
+                                        <label for="floatingInput">First Name</label>
+                                        {{-- Error --}}
+                                        @include('common.error', [$name='F_name'])
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control  @error('L_name') is-invalid @enderror"
+                                            name="L_name" placeholder="Name" value="{{ $admin->L_name }}">
+                                        <label for="floatingInput">last Name</label>
+                                        {{-- Error --}}
+                                        @include('common.error', [$name='L_name'])
+                                    </div>
+                                @endif
                                 <div class="form-floating mb-3">
                                     <input type="email" class="form-control  @error('email') is-invalid @enderror"
                                         id="floatingInput" name="email" placeholder="example@gmail.com"

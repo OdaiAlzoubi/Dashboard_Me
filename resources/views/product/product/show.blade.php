@@ -47,18 +47,32 @@
                                         {{-- <hr class="horizontal gray-light my-4"> --}}
                                         <ul class="list-group">
                                             <div class="row g-2">
+                                                <div class="col-md" >
+                                                    <li class="list-group-item border-0 ps-0 text-sm ">
+                                                        <strong class="text-dark">Description:</strong> &nbsp; <p style="max-height: 220px; max-width: 200px;" class="overflow-auto">{{$product->description}}</p>
+                                                    </li>
+                                                </div>
+
                                                 <div class="col-md">
                                                     <li class="list-group-item border-0 ps-0 pt-0 text-sm">
                                                         <strong class="text-dark">Name:</strong> &nbsp; {{$product->name}}
                                                     </li>
-                                                </div>
-                                                <div class="col-md">
                                                     <li class="list-group-item border-0 ps-0 text-sm">
-                                                        <strong class="text-dark">Description:</strong> &nbsp; {{$product->description}}
+                                                        <strong class="text-dark">Price:</strong>&nbsp; {{$product->price}}
+                                                    </li>
+                                                    <li class="list-group-item border-0 ps-0 text-sm">
+                                                        <strong class="text-dark">Size:</strong> &nbsp; {{$product->size}}
+                                                    </li>
+                                                    <li class="list-group-item border-0 ps-0 text-sm">
+                                                        <strong class="text-dark">Category :</strong>&nbsp; {{$product->categoryProduct->name}}
+                                                    </li>
+                                                    <li class="list-group-item border-0 ps-0 text-sm">
+                                                        <strong class="text-dark">User:</strong> &nbsp; {{$product->user->f_name . ' '. $product->user->l_name}}
                                                     </li>
                                                 </div>
+
                                             </div>
-                                            <div class="row g-2">
+                                            {{-- <div class="row g-2">
                                                 <div class="col-md">
                                                     <li class="list-group-item border-0 ps-0 text-sm">
                                                         <strong class="text-dark">Price:</strong>&nbsp; {{$product->price}}
@@ -69,8 +83,8 @@
                                                         <strong class="text-dark">Size:</strong> &nbsp; {{$product->size}}
                                                     </li>
                                                 </div>
-                                            </div>
-                                            <div class="row g-2">
+                                            </div> --}}
+                                            {{-- <div class="row g-2">
                                                 <div class="col-md">
                                                     <li class="list-group-item border-0 ps-0 text-sm">
                                                         <strong class="text-dark">Category :</strong>&nbsp; {{$product->categoryProduct->name}}
@@ -81,7 +95,7 @@
                                                         <strong class="text-dark">User:</strong> &nbsp; {{$product->user->f_name . ' '. $product->user->l_name}}
                                                     </li>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </ul>
                                     </div>
                                 </div>
@@ -119,7 +133,7 @@
                                                                 @endforeach
 
                                                             </div>
-                                                            <h5 class="review-count">{{$rate->count('rating')}} Reviews</h5>
+                                                            <h5 class="review-count ps-2">{{$rate->count('rating')}} Reviews</h5>
                                                         </div>
                                                     </div>
                                                 </div>
