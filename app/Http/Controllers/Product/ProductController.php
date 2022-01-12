@@ -16,13 +16,21 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::where('deleted_at', '=', '0')->latest(
-            'id'
-        )->paginate(5);
+        if ($request->id) {
+            $products = Product::where('deleted_at', '=', '0')->where('category', '=', $request->id)->latest(
+                'id'
+            )->paginate(5);
+        }
+        else{
+            $products = Product::where('deleted_at', '=', '0')->latest(
+                'id'
+            )->paginate(5);
+        }
+        $categories = CategoryProduct::get();
         $count = 0;
-        return view('product.product.index', compact('products', 'count'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('product.product.index', compact('products', 'count','categories'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

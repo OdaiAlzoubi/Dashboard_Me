@@ -21,6 +21,22 @@
             </div>
             {{-- Soft Delete --}}
             <div class="col-6 text-end">
+
+                <select class="form-select pt-3" name="filter_product" id="filter_product" style="width: 28%; display: inline;">
+                    <option value="{{ route('product.index') }}">All</option>
+                    @foreach ($categories as $value)
+                        @if ($value->id == request()->id)
+                            <option selected value="{{ route('product.index', ['id' => $value->id]) }}">
+                                {{ $value->name }}
+                            </option>
+                        @else
+                            <option value="{{ route('product.index', ['id' => $value->id]) }}">{{ $value->name }}
+                            </option>
+                        @endif
+                    @endforeach
+                </select>
+
+
                 <a href="{{ route('product.soft.delete.show') }}" class="btn btn-info" aria-current="page">Soft
                     Delete</a>
             </div>
@@ -97,7 +113,15 @@
     </div>
 
 
+    <script>
+        $(document).ready(function() {
+            $('#filter_product').change(function() {
+                window.location.href = this.value;
 
+            });
+
+        });
+    </script>
 
     {{ $products->links() }}
 @endsection
