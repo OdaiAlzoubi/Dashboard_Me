@@ -14,13 +14,21 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $courses = Course::where('deleted_at', '=', '0')->latest(
-            'id'
-        )->paginate(5);
+        if($request->id)
+        {
+            $courses = Course::where('deleted_at', '=', '0')->where('category','=',$request->id)->latest(
+                'id'
+            )->paginate(5);
+        }else{
+            $courses = Course::where('deleted_at', '=', '0')->latest(
+                'id'
+            )->paginate(5);
+        }
+        $categories=CategoryCourse::get();
         $count = 0;
-        return view('course.course.index', compact('courses', 'count'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('course.course.index', compact('courses', 'count','categories'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

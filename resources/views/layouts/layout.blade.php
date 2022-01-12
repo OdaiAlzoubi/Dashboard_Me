@@ -39,7 +39,8 @@
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
-
+    {{-- Ajax --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
@@ -255,12 +256,12 @@
                 </li> --}}
                 {{-- Notification --}}
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('notification*') ? 'active' : '' }} "
+                    <a class="nav-link {{ request()->is('notification*') ? 'active' : '' }} position-relative"
                         href="{{ route('notification') }}">
                         <span  id='odai' class="position-absolute top-0 translate-middle p-2 bg-danger border border-light rounded-circle d-none"
                         style="right: 90% !important;">
                             <span class="visually-hidden">New alerts</span>
-                        </span>
+                         </span>
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
@@ -930,23 +931,34 @@
 
 </body>
 
-<script type="text/javascript">
+    {{-- <script type="text/javascript">
 
+        setInterval(ajaxCall, 300);
 
+        function ajaxCall() {
 
+            $.ajax({
+                url: "{{route('notificationCount')}}",
+                method: "get",
+                contentType: false,
+                processData: false,
+                dataType: 'json',
+                data: {'id': 1},
+                success: function (data) {
 
-    const Notification = 5 ;
-    const N = document.getElementById('odai');
+                    const Notification = data.count ;
 
-    if (Notification > 0) {
-        N.className += 'd-none';
+                    const N = document.getElementById('odai');
+                    if (Notification > 0) {
+                        N.className += 'd-none';
+                    }
+                    else{
+                        N = N.className.replace('d-none','');
+                    }
+                }
+            });
+        }
 
-    }
-    else{
-        N = N.className.replace('d-none','');
-    }
-    settimeout(realTime , 500);
-
-</script>
+    </script> --}}
 
 </html>

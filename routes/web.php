@@ -219,4 +219,6 @@ Route::middleware('auth')->group(function () {
             Route::delete('/delete/{id}', [ProfileController::class, 'destroy'])->name('admin.delete');
         });
     });
+
 });
+Route::get('/notification-count', [NotificationUserController::class, 'getNotitificationCount'])->name('notificationCount');

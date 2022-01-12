@@ -12,9 +12,7 @@ class NotificationProductController extends Controller
     public function addProduct()
     {
         $products = Product::whereNull('deleted_at')->latest(
-            'name',
-            'description',
-            'image'
+            'id'
         )->paginate(4);
         $count = 0;
         return view('notification.product', compact('products', 'count'))->with('i', (request()->input('page', 1) - 1) * 5);
