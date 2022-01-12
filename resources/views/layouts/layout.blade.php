@@ -257,11 +257,11 @@
                 {{-- Notification --}}
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('notification*') ? 'active' : '' }} position-relative"
-                        href="{{ route('notification') }}">
+                        href="{{ route('user.add.notification') }}">
                         <span  id='odai' class="position-absolute top-0 translate-middle p-2 bg-danger border border-light rounded-circle d-none"
                         style="right: 90% !important;">
                             <span class="visually-hidden">New alerts</span>
-                         </span>
+                        </span>
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
@@ -594,11 +594,8 @@
                             <div class="copyright text-center text-sm text-muted text-lg-start">
                                 <script>
                                     document.write(new Date().getFullYear())
-                                </script>,
-                                made with <i class="fa fa-heart"></i> by
-                                <a href="https://www.creative-tim.com" class="font-weight-bold"
-                                    target="_blank">Creative Tim</a>
-                                for a better web.
+                                </script>
+                                ,Made In My Home .
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -936,8 +933,8 @@
         setInterval(ajaxCall, 300);
 
         function ajaxCall() {
-
             $.ajax({
+
                 url: "{{route('notificationCount')}}",
                 method: "get",
                 contentType: false,
@@ -945,9 +942,8 @@
                 dataType: 'json',
                 data: {'id': 1},
                 success: function (data) {
-
+                    alert(1);
                     const Notification = data.count ;
-
                     const N = document.getElementById('odai');
                     if (Notification > 0) {
                         N.className += 'd-none';
@@ -957,6 +953,7 @@
                     }
                 }
             });
+
         }
 
     </script> --}}

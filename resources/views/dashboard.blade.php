@@ -140,22 +140,25 @@
                                         <th scope="row">
                                             <p>{{ ++$count }}</p>
                                         </th>
-                                        <td>
-                                            <h6 class="card-title">
+                                        <td >
+                                            <h6 class="card-title ">
                                                 {{ $product->user->f_name . ' ' . $product->user->l_name }}</h6>
                                         </td>
                                         <td>
                                             <img src="{{ asset('image/product/' . $product->image) }}"
                                                 class="border-radius-lg shadow" alt="" width="70px" height="70px">
                                         </td>
-                                        <td>
-                                            <h6 class="card-title">{{ $product->name }}</h6>
+                                        <td class="text-center">
+                                            <h6 class="card-title container">{{ $product->name }}</h6>
                                         </td>
-                                        <td>
-                                            <h6 class="card-title">{{ $product->description }}</h6>
+                                        <td style="max-width: 1px " dir="rtl" lang="ar">
+                                            <div class="overflow-auto ">
+
+                                                <h6 class="card-title ">{{ $product->description }}</h6>
+                                            </div>
                                         </td>
-                                        <td>
-                                            <h6 class="card-title">{{ $product->categoryProduct->name }}</h6>
+                                        <td class="text-center">
+                                            <h6 class="card-title ">{{ $product->categoryProduct->name }}</h6>
                                         </td>
                                         <td class="text-center">
                                             {{--  --}}

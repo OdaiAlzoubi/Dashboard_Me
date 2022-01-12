@@ -159,24 +159,28 @@ Route::middleware('auth')->group(function () {
             return view('notification.index');
         })->name('notification');
 
-        // User
-        Route::group([], function () {
+        Route::prefix('notification')->group(function(){
 
-            Route::get('/user-notification', [NotificationUserController::class, 'addUser'])->name('user.add.notification');
-            Route::get('/user-acceptance/{id}', [NotificationUserController::class, 'userAcceptance'])->name('user.acceptance.notification');
-            Route::get('/user-refused/{id}', [NotificationUserController::class, 'userRefused'])->name('user.refused.notification');
+            // User
+            Route::group([], function () {
+
+                Route::get('/user-notification', [NotificationUserController::class, 'addUser'])->name('user.add.notification');
+                Route::get('/user-acceptance/{id}', [NotificationUserController::class, 'userAcceptance'])->name('user.acceptance.notification');
+                Route::get('/user-refused/{id}', [NotificationUserController::class, 'userRefused'])->name('user.refused.notification');
+            });
+            
+            // Product
+            Route::group([], function () {
+
+                Route::get('/product-notification', [NotificationProductController::class, 'addProduct'])->name('product.add.notification');
+                Route::get('/product-acceptance/{id}', [NotificationProductController::class, 'productAcceptance'])->name('product.acceptance.notification');
+                Route::get('/product-refused/{id}', [NotificationProductController::class, 'productRefused'])->name('product.refused.notification');
+            });
+
+            // Report
+            Route::get('/report-notification', [NotificationReportVideoController::class, 'report'])->name('report.notification');
         });
 
-        // Product
-        Route::group([], function () {
-
-            Route::get('/product-notification', [NotificationProductController::class, 'addProduct'])->name('product.add.notification');
-            Route::get('/product-acceptance/{id}', [NotificationProductController::class, 'productAcceptance'])->name('product.acceptance.notification');
-            Route::get('/product-refused/{id}', [NotificationProductController::class, 'productRefused'])->name('product.refused.notification');
-        });
-
-        // Report
-        Route::get('/report-notification', [NotificationReportVideoController::class, 'report'])->name('report.notification');
     });
 
     // User
@@ -220,5 +224,5 @@ Route::middleware('auth')->group(function () {
         });
     });
 
+    Route::get('/notification-count', [NotificationUserController::class, 'getNotitificationCount'])->name('notificationCount');
 });
-Route::get('/notification-count', [NotificationUserController::class, 'getNotitificationCount'])->name('notificationCount');

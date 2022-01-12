@@ -28,8 +28,7 @@
 
                                 <div class="form-group row">
                                     <label for="name"
-                                        class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
-
+                                        class="col-md-3 col-form-label text-md-right">{{ __('First Name') }}</label>
                                     <div class="col-md-6">
                                         <input id="name" type="text"
                                             class="form-control @error('F_name') is-invalid @enderror" name="F_name"
@@ -45,7 +44,7 @@
 
                                 <div class="form-group row">
                                     <label for="name"
-                                        class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
+                                        class="col-md-3 col-form-label text-md-right">{{ __('Last Name') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="name" type="text"
@@ -62,7 +61,7 @@
 
                                 <div class="form-group row">
                                     <label for="email"
-                                        class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                        class="col-md-3 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="email" type="text"
@@ -79,7 +78,7 @@
 
                                 <div class="form-group row">
                                     <label for="name"
-                                        class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
+                                        class="col-md-3 col-form-label text-md-right">{{ __('Phone') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="phone" type="text"
@@ -96,7 +95,7 @@
 
                                 <div class="form-group row">
                                     <label for="password"
-                                        class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                        class="col-md-3 col-form-label text-md-right">{{ __('Password') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="password" type="password"
@@ -113,7 +112,7 @@
 
                                 <div class="form-group row">
                                     <label for="password-confirm"
-                                        class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                        class="col-md-3 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="password-confirm" type="password" class="form-control"
@@ -123,7 +122,7 @@
 
                                 <div class="form-group row">
                                     <label for="gender"
-                                        class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+                                        class="col-md-3 col-form-label text-md-right">{{ __('Gender') }}</label>
                                     <div class="col-md-6">
                                         <select id="gender" name="gender"
                                             class="form-select @error('gender') is-invalid @enderror"
@@ -142,7 +141,7 @@
 
                                 <div class="form-group row">
                                     <label for="role"
-                                        class="col-md-4 col-form-label text-md-right">{{ __('permissions') }}</label>
+                                        class="col-md-3 col-form-label text-md-right">{{ __('permissions') }}</label>
                                     <div class="col-md-6">
                                         <select id="role" name="role"
                                             class="form-select @error('role') is-invalid @enderror"

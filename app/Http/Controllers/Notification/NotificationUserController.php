@@ -27,7 +27,6 @@ class NotificationUserController extends Controller
         $countProduct = Product::whereNull('deleted_at')->count();
         $countReport = ReportVideo::whereNull('')->count();
         // $count = $countUser + $countProduct + $countReport ;
-        // dd($count);
         return response()->json([
             'status' => 200,
             'count' => $count,
