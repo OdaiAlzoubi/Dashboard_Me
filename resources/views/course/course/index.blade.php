@@ -17,9 +17,26 @@
                 <h6>Authors table</h6>
             </div>
             {{-- Soft Delete --}}
-            <div class="col-6 text-end">
+            <div class="col-6 text-end ">
+
+                <select class="form-select pt-3" name="filter_course" id="filter_course" style="width: 28%; display: inline;">
+                    <option value="{{ route('Course.index') }}">All</option>
+                    @foreach ($categories as $value)
+                        @if ($value->id == request()->id)
+                            <option selected value="{{ route('Course.index', ['id' => $value->id]) }}">
+                                {{ $value->name }}
+                            </option>
+                        @else
+                            <option value="{{ route('Course.index', ['id' => $value->id]) }}">{{ $value->name }}
+                            </option>
+                        @endif
+                    @endforeach
+                </select>
+
+
                 <a href="{{ route('course.create') }}" class="btn btn-primary">Add Course</a>
                 <a href="{{ route('course.soft.delete.show') }}" class="btn btn-info">Soft Delete</a>
+
             </div>
         </div>
     </div>
@@ -48,8 +65,8 @@
                                 <p>{{ ++$count }}</p>
                             </th>
                             <td>
-                                <img src="{{ asset('image/course/' . $course->image) }}" class="border-radius-lg shadow " alt=""
-                                    width="70px" height="70px">
+                                <img src="{{ asset('image/course/' . $course->image) }}" class="border-radius-lg shadow "
+                                    alt="" width="70px" height="70px">
 
                             </td>
                             <td>
@@ -66,21 +83,26 @@
                             </td>
                             <td class="text-center">
                                 <div class="btn-group gap-1">
-                                    <a href="{{ route('course.get.video.by.course', $course->id) }}" class="btn btn-link" style="width: 0px; height: 0px;"
-                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Show Videos">
-                                        <i class="fas fa-eye" style="color: #0dcaf0 ; font-size: 25px; margin-left: -18px;"></i>
+                                    <a href="{{ route('course.get.video.by.course', $course->id) }}"
+                                        class="btn btn-link" style="width: 0px; height: 0px;" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Show Videos">
+                                        <i class="fas fa-eye"
+                                            style="color: #0dcaf0 ; font-size: 25px; margin-left: -18px;"></i>
                                     </a>
-                                    <a href="{{ route('course.edit', $course->id) }}" class="btn btn-link" style="width: 0px; height: 0px;"
-                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
-                                        <i class="fas fa-edit" style="color: #198754 ; font-size: 25px; margin-left: -14px;"></i>
+                                    <a href="{{ route('course.edit', $course->id) }}" class="btn btn-link"
+                                        style="width: 0px; height: 0px;" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Edit">
+                                        <i class="fas fa-edit"
+                                            style="color: #198754 ; font-size: 25px; margin-left: -14px;"></i>
                                     </a>
 
                                     <form action="{{ route('course.soft.delete', $course->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-link"style="width: 0px; height: 0px;"
+                                        <button type="submit" class="btn btn-link" style="width: 0px; height: 0px;"
                                             data-bs-toggle="tooltip" data-bs-placement="top" title="Soft Delete">
-                                            <i class="fas fa-trash" style="color: red ; font-size: 25px; margin-left: -14px;" >&#xE872;</i>
+                                            <i class="fas fa-trash"
+                                                style="color: red ; font-size: 25px; margin-left: -14px;">&#xE872;</i>
                                         </button>
                                     </form>
 
@@ -97,6 +119,15 @@
         </div>
     </div>
 
+    <script>
+        $(document).ready(function() {
+            $('#filter_course').change(function() {
+                window.location.href = this.value;
+
+            });
+
+        });
+    </script>
 
 
     {{ $courses->links() }}
