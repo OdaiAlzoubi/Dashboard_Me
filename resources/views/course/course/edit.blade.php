@@ -16,7 +16,7 @@
         <div class="-">
             <div class="">
 
-                <form action="{{ route('course.update', $course->id , ['check'=>true]) }}" method="post" enctype="multipart/form-data"
+                <form action="{{ route('course.update',[ $course->id , 'check'=>$check]) }}" method="post" enctype="multipart/form-data"
                     class="container mt-5">
                     @csrf
                     @method('PUT')
@@ -60,7 +60,11 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">Save course</button>
+                    @if ($check)
+                    <a href="{{ route('categoryCourse.get.courses.by.category', $course->categoryCourse->id) }}" class="btn btn-secondary" aria-current="page">Back</a>
+                    @else
                     <a href="{{ route('Course.index') }}" class="btn btn-secondary" aria-current="page">Back</a>
+                    @endif
                 </form>
 
             </div>

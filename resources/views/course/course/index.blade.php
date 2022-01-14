@@ -56,8 +56,6 @@
                         <th scope="col" class="text-center">Action</th>
                     </tr>
                 </thead>
-
-
                 <tbody>
                     @foreach ($courses as $course)
                         <tr>
@@ -75,11 +73,11 @@
                             <td>
                                 <p class="card-title container">{{ $course->presenter }}</p>
                             </td>
-                            <td>
-                                <p class="card-text container">{{ $course->description }}</p>
+                            <td style=" word-wrap: break-word;" dir="rtl" lang="ar">
+                                    <p class="card-text container">{{ $course->description }}</p>
                             </td>
                             <td>
-                                <p class="card-text container">{{ $course->categoryCourse->name }}</p>
+                                <p class="card-text container ">{{ $course->categoryCourse->name }}</p>
                             </td>
                             <td class="text-center">
                                 <div class="btn-group gap-1">
@@ -89,7 +87,10 @@
                                         <i class="fas fa-eye"
                                             style="color: #0dcaf0 ; font-size: 25px; margin-left: -18px;"></i>
                                     </a>
-                                    <a href="{{ route('course.edit', $course->id) }}" class="btn btn-link"
+                                    @php
+                                        $check = false ;
+                                    @endphp
+                                    <a href="{{ route('course.edit',[ $course->id , 'check'=>$check]) }}" class="btn btn-link"
                                         style="width: 0px; height: 0px;" data-bs-toggle="tooltip" data-bs-placement="top"
                                         title="Edit">
                                         <i class="fas fa-edit"

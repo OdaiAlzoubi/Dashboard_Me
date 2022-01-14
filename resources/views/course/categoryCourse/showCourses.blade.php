@@ -19,7 +19,7 @@
     <div class="card-header pb-0">
         <div class="row">
             <div class="col-6 d-flex align-items-center">
-                <h6>Show Courses , {{$courses[0]->categoryCourse->name}}</h6>
+                <h6>Show Courses , {{$category->name}}</h6>
             </div>
 
 
@@ -82,7 +82,10 @@
                                         data-bs-toggle="tooltip" data-bs-placement="top" title="Show Videos">
                                         <i class="fas fa-eye" style="color: #0dcaf0 ; font-size: 25px; margin-left: -18px;"></i>
                                     </a>
-                                    <a href="{{ route('course.edit', $course->id , ['check'=> true]) }}" class="btn btn-link" style="width: 0px; height: 0px;"
+                                    @php
+                                        $check = true;
+                                    @endphp
+                                    <a href="{{ route('course.edit',[ $course->id , 'check'=>$check]) }}" class="btn btn-link" style="width: 0px; height: 0px;"
                                     data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                                         <i class="fas fa-edit" style="color: #198754 ; font-size: 25px; margin-left: -14px;"></i>
                                     </a>

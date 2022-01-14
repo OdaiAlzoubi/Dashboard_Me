@@ -119,9 +119,10 @@ class CourseController extends Controller
      */
     public function edit(Request $request ,$id)
     {
+        $check = $request->check;
         $course = Course::where('id', '=', $id)->first();
         $categories = CategoryCourse::where('id','<>',$course->category)->get();
-        return view('course.course.edit', compact('course','categories'));
+        return view('course.course.edit', compact('course','categories','check'));
     }
 
     /**
@@ -133,7 +134,6 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request->check);
         $request->validate([
             'name'=>'required|max:50|string',
             'presenter'=>'required|max:50|string',
@@ -158,10 +158,13 @@ class CourseController extends Controller
         }
 
         $course->update();
+
         if ($request->check) {
-            
+            return redirect()->route('categoryCourse.get.courses.by.category',$course->category)->with('success', 'This course has been Update.');
         }
-        return redirect()->route('Course.index')->with('success', 'This course has been Update.');
+        else{
+            return redirect()->route('Course.index')->with('success', 'This course has been Update.');
+        }
     }
 
     /**
@@ -211,10 +214,11 @@ class CourseController extends Controller
     // Get All Courses By Category Id
     public function getCoursesByCategoryId($id)
     {
+        $category = CategoryCourse::where('id','=',$id)->first();
         $courses = Course::where('category', '=', $id)->where('deleted_at', '=', '0')->get();
         $count = 0;
         // dd($courses);
-        return view('course.categoryCourse.showCourses', compact('courses', 'count','id'));
+        return view('course.categoryCourse.showCourses', compact('courses', 'count','id','category'));
     }
 
     // Create Course Use Category
