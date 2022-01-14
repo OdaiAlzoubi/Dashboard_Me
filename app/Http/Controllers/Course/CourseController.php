@@ -54,7 +54,7 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=>'required|max:50|regex:/^[a-zA-Z]+$/u|string',
+            'name'=>'required|max:50|string',
             'presenter'=>'required|max:50|regex:/^[a-zA-Z]+$/u|string',
             'description'=>'nullable|max:1000',
             'image'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -122,7 +122,7 @@ class CourseController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name'=>'required|max:50|regex:/^[a-zA-Z]+$/u|string',
+            'name'=>'required|max:50|string',
             'presenter'=>'required|max:50|regex:/^[a-zA-Z]+$/u|string',
             'description'=>'nullable|max:1000',
             'image'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -161,15 +161,6 @@ class CourseController extends Controller
         return redirect()->route('Course.index')->with('success', 'This course has been deleted.');
     }
 
-    // Get All Courses By Category Id
-    public function getCoursesByCategoryId($id)
-    {
-        $courses = Course::where('category', '=', $id)->where('deleted_at', '=', '0')->get();
-        $count = 0;
-        // dd($courses);
-        return view('course.categoryCourse.showCourses', compact('courses', 'count'));
-    }
-
     //
     public function softDelete($id)
     {
@@ -200,5 +191,19 @@ class CourseController extends Controller
         $count = 0;
         return view('course.course.softDelete', compact('courses', 'count'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+    // Get All Courses By Category Id
+    public function getCoursesByCategoryId($id)
+    {
+        $courses = Course::where('category', '=', $id)->where('deleted_at', '=', '0')->get();
+        $count = 0;
+        // dd($courses);
+        return view('course.categoryCourse.showCourses', compact('courses', 'count'));
+    }
+
+    // Create Course Use Category
+    public function in(){}
+
+
 
 }

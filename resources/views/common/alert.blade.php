@@ -1,7 +1,7 @@
 {{-- Message --}}
 @if (Session::has('success'))
-    <div class="alert alert-success alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert">
+    <div class="alert  alert-dismissible" role="alert" style="background-color: #6fd674; color: black">
+        <button type="button" class="btn-close" style="font-size: 20px;" data-dismiss="alert">
             <i class="fa fa-times"></i>
         </button>
         <strong>Success !</strong> {{ session('success') }}

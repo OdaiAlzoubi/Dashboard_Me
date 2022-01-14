@@ -41,7 +41,7 @@ class CategoryCourseController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|max:50|regex:/^[a-zA-Z]+$/u|string',
+            'name' => 'required|max:50|string',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
@@ -60,7 +60,7 @@ class CategoryCourseController extends Controller
         }
 
         $category->save();
-        return redirect()->route('categoryCourse.index');
+        return redirect()->route('categoryCourse.index')->with('success', 'This category course has been Created');
     }
 
     /**
@@ -98,7 +98,7 @@ class CategoryCourseController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|max:50|regex:/^[a-zA-Z]+$/u|string',
+            'name' => 'required|max:50|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         $category = CategoryCourse::where('id', '=', $id)->first();
@@ -116,7 +116,7 @@ class CategoryCourseController extends Controller
         }
 
         $category->update();
-        return redirect()->route('categoryCourse.index');
+        return redirect()->route('categoryCourse.index')->with('success', 'This category course has been Edit');
     }
 
     /**

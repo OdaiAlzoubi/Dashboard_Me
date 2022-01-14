@@ -36,9 +36,9 @@
                         <th scope="col">User</th>
                         <th scope="col">Image</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Description</th>
+                        {{-- <th scope="col">Description</th> --}}
                         <th scope="col">Category</th>
-                        <th scope="col">Action</th>
+                        <th scope="col" class="text-center">Action</th>
                     </tr>
                 </thead>
 
@@ -55,18 +55,18 @@
                             </td>
                             <td>
                                 <img src="{{ asset('image/product/' . $product->image) }}" class="border-radius-lg shadow"
-                                    alt="..." width="70px" height="70px">
+                                    alt="" width="70px" height="70px">
                             </td>
                             <td>
                                 <h6 class="card-title">{{ $product->name }}</h6>
                             </td>
-                            <td>
+                            {{-- <td>
                                 <h6 class="card-title">{{ $product->description }}</h6>
-                            </td>
+                            </td> --}}
                             <td>
                                 <h6 class="card-title">{{ $product->categoryProduct->name }}</h6>
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{--  --}}
                                 <div class="btn-group gap-1">
                                     <a href="{{ route('product.acceptance.notification', $product->id) }}"

@@ -41,7 +41,7 @@ class CategoryProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|max:50|regex:/^[a-zA-Z]+$/u|string',
+            'name' => 'required|max:50|string',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
@@ -60,7 +60,7 @@ class CategoryProductController extends Controller
         }
 
         $category->save();
-        return redirect()->route('categoryProduct.index');
+        return redirect()->route('categoryProduct.index')->with('success', 'This category product has been Created');
     }
 
     /**
@@ -97,7 +97,7 @@ class CategoryProductController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name	'=>'required|max:50|regex:/^[a-zA-Z]+$/u|string',
+            'name'=>'required|max:50|string',
             'image'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         $category = CategoryProduct::where('id', '=', $id)->first();
@@ -115,7 +115,7 @@ class CategoryProductController extends Controller
         }
 
         $category->update();
-        return redirect()->route('categoryProduct.index');
+        return redirect()->route('categoryProduct.index')->with('success', 'This category product has been Edit');
     }
 
     /**

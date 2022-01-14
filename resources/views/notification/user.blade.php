@@ -55,7 +55,7 @@
                             </td>
                             <td>
                                 <img src="{{ asset('image/user/' . $user->image) }}" class="border-radius-lg shadow"
-                                    alt="..." width="70px" height="70px">
+                                    alt="" width="70px" height="70px">
                             </td>
                             <td>
                                 <h6 class="card-title">{{ $user->gender }}</h6>

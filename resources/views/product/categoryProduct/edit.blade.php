@@ -6,7 +6,7 @@
 
 @section('content')
 
-
+@include('common.alert')
 
     <form action="{{ route('categoryProduct.update', $category->id) }}" method="post" enctype="multipart/form-data"
         class="container mt-5">
