@@ -36,13 +36,21 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $categories = CategoryCourse::all();
-        if ($categories->count() === 0) {
-            return view('course.categoryCourse.create')->with('success', 'Please create a Category Course first.');
+        $check = false;
+        if ($request->id) {
+            $categories = CategoryCourse::where('id','=',$request->id)->first();
+            // dd($categories);
+            $check = true;
         }
-        return view('course.course.create', compact('categories'));
+        else{
+            $categories = CategoryCourse::all();
+            if ($categories->count() === 0) {
+                return view('course.categoryCourse.create')->with('success', 'Please create a Category Course first.');
+            }
+        }
+        return view('course.course.create', compact('categories', 'check'));
     }
 
     /**
@@ -55,12 +63,11 @@ class CourseController extends Controller
     {
         $request->validate([
             'name'=>'required|max:50|string',
-            'presenter'=>'required|max:50|regex:/^[a-zA-Z]+$/u|string',
+            'presenter'=>'required|max:50|string',
             'description'=>'nullable|max:1000',
             'image'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'category'=>'required'
         ]);
-
         $course = new Course;
         $course->name = $request->input('name');
         $course->presenter = $request->input('presenter');
@@ -80,7 +87,12 @@ class CourseController extends Controller
         }
 
         $course->save();
-        return redirect()->route('Course.index')->with('success', 'This course has been Stored.');
+        if ($request->check) {
+            return redirect()->route('categoryCourse.get.courses.by.category',$course->category)->with('success', 'This course has been Stored.');
+        }
+        else{
+            return redirect()->route('Course.index')->with('success', 'This course has been Stored.');
+        }
     }
 
     /**
@@ -105,7 +117,7 @@ class CourseController extends Controller
      * @param  \App\Models\Course\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request ,$id)
     {
         $course = Course::where('id', '=', $id)->first();
         $categories = CategoryCourse::where('id','<>',$course->category)->get();
@@ -121,9 +133,10 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
+        dd($request->check);
         $request->validate([
             'name'=>'required|max:50|string',
-            'presenter'=>'required|max:50|regex:/^[a-zA-Z]+$/u|string',
+            'presenter'=>'required|max:50|string',
             'description'=>'nullable|max:1000',
             'image'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'category'=>'required'
@@ -145,6 +158,9 @@ class CourseController extends Controller
         }
 
         $course->update();
+        if ($request->check) {
+            
+        }
         return redirect()->route('Course.index')->with('success', 'This course has been Update.');
     }
 
@@ -198,7 +214,7 @@ class CourseController extends Controller
         $courses = Course::where('category', '=', $id)->where('deleted_at', '=', '0')->get();
         $count = 0;
         // dd($courses);
-        return view('course.categoryCourse.showCourses', compact('courses', 'count'));
+        return view('course.categoryCourse.showCourses', compact('courses', 'count','id'));
     }
 
     // Create Course Use Category

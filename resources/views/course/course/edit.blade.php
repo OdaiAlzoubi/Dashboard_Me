@@ -16,7 +16,7 @@
         <div class="-">
             <div class="">
 
-                <form action="{{ route('course.update', $course->id) }}" method="post" enctype="multipart/form-data"
+                <form action="{{ route('course.update', $course->id , ['check'=>true]) }}" method="post" enctype="multipart/form-data"
                     class="container mt-5">
                     @csrf
                     @method('PUT')

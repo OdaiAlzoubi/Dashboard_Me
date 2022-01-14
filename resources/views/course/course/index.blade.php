@@ -123,9 +123,7 @@
         $(document).ready(function() {
             $('#filter_course').change(function() {
                 window.location.href = this.value;
-
             });
-
         });
     </script>
 

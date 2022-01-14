@@ -19,14 +19,14 @@
     <div class="card-header pb-0">
         <div class="row">
             <div class="col-6 d-flex align-items-center">
-                <h6>Show Courses</h6>
+                <h6>Show Courses , {{$courses[0]->categoryCourse->name}}</h6>
             </div>
 
 
             {{-- Soft Delete --}}
             <div class="col-6 text-end">
                 <a href="{{ route('categoryCourse.index') }}" class="btn btn-secondary" aria-current="page">Back</a>
-                <a href="{{ route('course.create') }}" class="btn btn-primary">Add Course</a>
+                <a href="{{ route('course.create', ['id'=> $id]) }}" class="btn btn-primary">Add Course</a>
                 {{-- <a href="{{ route('course.soft.delete.show') }}" class="btn btn-info"
                     aria-current="page">Soft Delete</a> --}}
             </div>
@@ -82,7 +82,7 @@
                                         data-bs-toggle="tooltip" data-bs-placement="top" title="Show Videos">
                                         <i class="fas fa-eye" style="color: #0dcaf0 ; font-size: 25px; margin-left: -18px;"></i>
                                     </a>
-                                    <a href="{{ route('course.edit', $course->id) }}" class="btn btn-link" style="width: 0px; height: 0px;"
+                                    <a href="{{ route('course.edit', $course->id , ['check'=> true]) }}" class="btn btn-link" style="width: 0px; height: 0px;"
                                     data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                                         <i class="fas fa-edit" style="color: #198754 ; font-size: 25px; margin-left: -14px;"></i>
                                     </a>
