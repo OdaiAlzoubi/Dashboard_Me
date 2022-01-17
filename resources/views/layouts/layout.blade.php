@@ -98,7 +98,7 @@
                         href="{{ route('categoryCourse.index') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
+                            {{-- <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>office</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -116,7 +116,23 @@
                                         </g>
                                     </g>
                                 </g>
+                            </svg> --}}
+                            <svg width="24px" height="24px" viewBox="0 0 20 18" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF"
+                                        fill-rule="nonzero">
+                                        <g transform="translate(1716.000000, 291.000000)">
+                                            <g id="office" transform="translate(153.000000, 2.000000)">
+                                                <path class="color-background"
+                                                    d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zM4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm13 0c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
                             </svg>
+
                         </div>
                         <span class="nav-link-text ms-1">Category Course</span>
                     </a>
@@ -128,7 +144,7 @@
                         href="{{ route('Course.index') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
+                            {{-- <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>shop </title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -146,7 +162,34 @@
                                         </g>
                                     </g>
                                 </g>
+                            </svg> --}}
+                            {{-- <svg width="24px" height="24px" viewBox="0 0 90 18" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g>
+                                    <path
+                                        d="M2.73,60.82h10.51c-1-0.26-1.75-1.18-1.75-2.26V2.33c0-1.28,1.05-2.33,2.33-2.33h94.64 c1.28,0,2.33,1.05,2.33,2.33v56.22c0,1.08-0.74,2-1.75,2.26h11.12c1.5,0,2.73,1.22,2.73,2.73l0,0c0,1.5-1.22,2.73-2.73,2.73H2.73 c-1.5,0-2.73-1.22-2.73-2.73l0,0C0,62.04,1.22,60.82,2.73,60.82L2.73,60.82L2.73,60.82z M29.91,10.97h24.38v29.24 c-0.05,0.82-1.1,0.84-2.24,0.79H29.52c-1.58,0-2.87,1.29-2.87,2.87c0,1.58,1.29,2.87,2.87,2.87h23.57v-3.05h2.24v3.88 c0,0.71-0.58,1.28-1.28,1.28H29.63c-2.84,1.05-5.16-1.27-5.16-4.11V16.41C24.48,13.42,26.92,10.97,29.91,10.97L29.91,10.97z M66.73,47.29c-0.81,0-1.47-0.71-1.47-1.58s0.66-1.58,1.47-1.58h29.29c0.81,0,1.47,0.71,1.47,1.58s-0.66,1.58-1.47,1.58H66.73 L66.73,47.29z M66.52,12.78h32.27c0.69,0,1.26,0.57,1.26,1.26v4.5c0,0.68-0.57,1.26-1.26,1.26H66.52c-0.68,0-1.26-0.56-1.26-1.26 v-4.5C65.26,13.34,65.83,12.78,66.52,12.78L66.52,12.78z M66.73,29.63c-0.81,0-1.47-0.71-1.47-1.58c0-0.87,0.66-1.58,1.47-1.58 h27.28c0.81,0,1.47,0.71,1.47,1.58c0,0.87-0.66,1.58-1.47,1.58H66.73L66.73,29.63z M66.73,38.46c-0.81,0-1.47-0.71-1.47-1.58 s0.66-1.58,1.47-1.58h23.03c0.81,0,1.47,0.71,1.47,1.58s-0.66,1.58-1.47,1.58H66.73L66.73,38.46z M30.92,15.22h0.91 c0.46,0,0.84,0.31,0.84,0.68v21.37c0,0.37-0.38,0.68-0.84,0.68h-0.91c-0.46,0-0.84-0.31-0.84-0.68V15.9 C30.08,15.52,30.46,15.22,30.92,15.22L30.92,15.22z M15.47,3.65h91.65v54.24H15.47V3.65L15.47,3.65L15.47,3.65z M59.15,61.84h7.67 c0.72,0,1.31,0.59,1.31,1.31l0,0c0,0.72-0.59,1.31-1.31,1.31h-7.67c-0.72,0-1.31-0.59-1.31-1.31l0,0 C57.84,62.42,58.43,61.84,59.15,61.84L59.15,61.84L59.15,61.84z" />
+                                </g>
+                            </svg> --}}
+                            <svg width="24px" height="24px" viewBox="0 0 55 50" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g data-name="Glyph">
+                                    <path class="color-background"
+                                        d="M59,2H5A3,3,0,0,0,2,5V39a3,3,0,0,0,3,3H59a3,3,0,0,0,3-3V5A3,3,0,0,0,59,2ZM56,36H31.923A11.121,11.121,0,0,0,9.77,36H8V8H56Z" />
+                                    <path class="color-background"
+                                        d="M33.058,28.885a1,1,0,0,0,1.278,1.278L38,28.853a10.072,10.072,0,1,0-3.636-3.636ZM43.071,12.079a8.071,8.071,0,1,1-4.4,14.833,1,1,0,0,0-.883-.1l-2.132.761.762-2.132a1,1,0,0,0-.105-.883,8.069,8.069,0,0,1,6.762-12.475Z" />
+                                    <circle cx="10" cy="48" r="3" />
+                                    <path class="color-background"
+                                        d="M2.242,61a1,1,0,0,0,1,1H16.451a1,1,0,0,0,1-1A7.6,7.6,0,0,0,2.242,61Z" />
+                                    <circle cx="32" cy="48" r="3" />
+                                    <path class="color-background"
+                                        d="M24.242,61a1,1,0,0,0,1,1H38.451a1,1,0,0,0,1-1,7.6,7.6,0,0,0-15.209,0Z" />
+                                    <circle cx="54" cy="48" r="3" />
+                                    <path class="color-background"
+                                        d="M46.242 61a1 1 0 0 0 1 1H60.451a1 1 0 0 0 1-1 7.6 7.6 0 0 0-15.209 0zM21.082 21.133a4.067 4.067 0 1 0-4.067-4.066A4.071 4.071 0 0 0 21.082 21.133zM41.488 23.6l5.572-2.983a.5.5 0 0 0 .006-.878l-5.572-3.081a.5.5 0 0 0-.742.438v6.063A.5.5 0 0 0 41.488 23.6z" />
+                                </g>
                             </svg>
+
+
                         </div>
                         <span class="nav-link-text ms-1">Courses</span>
                     </a>
@@ -191,7 +234,7 @@
                         href="{{ route('categoryProduct.index') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
+                            {{-- <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>box-3d-50</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -212,6 +255,21 @@
                                         </g>
                                     </g>
                                 </g>
+                            </svg> --}}
+                            <svg width="24px" height="24px" viewBox="0 0 20 18" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF"
+                                        fill-rule="nonzero">
+                                        <g transform="translate(1716.000000, 291.000000)">
+                                            <g id="office" transform="translate(153.000000, 2.000000)">
+                                                <path class="color-background"
+                                                    d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zM4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm13 0c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
                             </svg>
                         </div>
                         <span class="nav-link-text ms-1">Category Product</span>
@@ -224,7 +282,7 @@
                         href="{{ route('product.index') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
+                            {{-- <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>settings</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -245,6 +303,11 @@
                                         </g>
                                     </g>
                                 </g>
+                            </svg> --}}
+                            <svg width="24px" height="24px" viewBox="0 0 21 18" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path class="color-background"
+                                    d="M11.5 23l-8.5-4.535v-3.953l5.4 3.122 3.1-3.406v8.772zm1-.001v-8.806l3.162 3.343 5.338-2.958v3.887l-8.5 4.534zm-10.339-10.125l-2.161-1.244 3-3.302-3-2.823 8.718-4.505 3.215 2.385 3.325-2.385 8.742 4.561-2.995 2.771 2.995 3.443-2.242 1.241v-.001l-5.903 3.27-3.348-3.541 7.416-3.962-7.922-4.372-7.923 4.372 7.422 3.937v.024l-3.297 3.622-5.203-3.008-.16-.092-.679-.393v.002z" />
                             </svg>
                         </div>
                         <span class="nav-link-text ms-1">Product</span>
@@ -258,13 +321,14 @@
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('notification*') ? 'active' : '' }} position-relative"
                         href="{{ route('user.add.notification') }}">
-                        <span  id='odai' class="position-absolute top-0 translate-middle p-2 bg-danger border border-light rounded-circle d-none"
-                        style="right: 90% !important;">
+                        <span id='odai'
+                            class="position-absolute top-0 translate-middle p-2 bg-danger border border-light rounded-circle d-none"
+                            style="right: 90% !important;">
                             <span class="visually-hidden">New alerts</span>
                         </span>
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
+                            {{-- <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>settings</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -285,7 +349,26 @@
                                         </g>
                                     </g>
                                 </g>
+                            </svg> --}}
+
+                            <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                                style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path class="color-background" d="M426.667,0c-47.061,0-85.333,38.272-85.333,85.333s38.272,85.333,85.333,85.333S512,132.395,512,85.333
+           S473.728,0,426.667,0z"></path>
+                                            <path class="color-background" d="M298.667,85.333c0-14.976,2.731-29.291,7.467-42.667h-220.8C38.272,42.667,0,80.939,0,128v298.667
+           C0,473.728,38.272,512,85.333,512H384c47.061,0,85.333-38.272,85.333-85.333v-220.8c-13.376,4.757-27.691,7.467-42.667,7.467
+           C356.075,213.333,298.667,155.925,298.667,85.333z"></path>
+                                        </g>
+
+                                        <g>
+                                        </g>
                             </svg>
+
                         </div>
                         <span class="nav-link-text ms-1">Notification</span>
                     </a>
@@ -297,7 +380,7 @@
                         href="{{ route('user.index') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
+                            {{-- <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>settings</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -318,7 +401,33 @@
                                         </g>
                                     </g>
                                 </g>
+                            </svg> --}}
+
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px"
+                                viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path class="color-background" d="M337.118,269.871c25.13,19.968,45.376,48.935,57.969,83.351c66.033-3.371,112.442-19.337,112.442-19.337
+       c0-61.853-25.654-116.077-64.162-146.426c-16.932,20.482-42.531,33.537-71.18,33.537c-8.823,0-17.355-1.242-25.436-3.554
+       c0.387,3.415,0.593,6.884,0.593,10.402C347.345,242.999,343.651,257.29,337.118,269.871z" />
+                                        <path class="color-background" d="M174.883,269.871c-6.532-12.581-10.227-26.872-10.227-42.027c0-3.51,0.205-6.971,0.59-10.378
+       c-7.717,2.093-15.833,3.218-24.213,3.218c-28.649,0-54.25-13.055-71.181-33.537C31.344,217.495,5.69,271.719,5.69,333.572
+       c0,0,44.998,16.175,111.316,19.4C129.605,318.666,149.814,289.791,174.883,269.871z" />
+                                    </g>
+                                    <path class="color-background" d="M391.343,433.041c0-61.853-25.654-116.077-64.162-146.426c-16.932,20.482-42.531,33.537-71.18,33.537
+   c-28.649,0-54.25-13.055-71.181-33.537c-38.508,30.349-64.163,84.573-64.163,146.426c0,0,55.51,19.959,134.096,19.959
+   S391.343,433.041,391.343,433.041z" />
+                                    <circle class="color-background" cx="256.001" cy="227.844" r="74.844" />
+                                    <path class="color-background" d="M372.188,53.844c-41.336,0-74.845,33.508-74.845,74.844c0,6.554,0.849,12.909,2.431,18.967
+   c19.537,10.687,34.737,28.307,42.3,49.551c9.217,4.057,19.397,6.325,30.114,6.325c41.334,0,74.844-33.508,74.844-74.844
+   S413.522,53.844,372.188,53.844z" />
+                                    <path class="color-background" d="M213.452,147.323c1.579-6.053,2.425-12.401,2.425-18.948c0-41.336-33.51-74.844-74.844-74.844
+   c-41.336,0-74.845,33.508-74.845,74.844s33.509,74.844,74.845,74.844c10.484,0,20.461-2.164,29.52-6.057
+   C178.2,175.716,193.632,157.968,213.452,147.323z" />
+                                </g>
                             </svg>
+
                         </div>
                         <span class="nav-link-text ms-1">Users</span>
                     </a>
@@ -329,7 +438,8 @@
                 </li>
                 {{-- Profile --}}
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('admin*') ? 'active' : '' }} " href="{{ route('admin.profile')}}">
+                    <a class="nav-link {{ request()->is('admin*') ? 'active' : '' }} "
+                        href="{{ route('admin.profile') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1"
@@ -360,7 +470,8 @@
                 </li>
                 {{-- Logout --}}
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('logout*') ? 'active' : '' }} " href="{{ route('logout') }}">
+                    <a class="nav-link {{ request()->is('logout*') ? 'active' : '' }} "
+                        href="{{ route('logout') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1"
@@ -387,39 +498,40 @@
                     </a>
                 </li>
                 @if (Auth::user()->role < 1)
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->is('admin/create*') ? 'active' : '' }} " href="{{ route('admin.create') }}">
-                        <div
-                            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="12px" height="20px" viewBox="0 0 40 40" version="1.1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <title>spaceship</title>
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g transform="translate(-1720.000000, -592.000000)" fill="#FFFFFF"
-                                        fill-rule="nonzero">
-                                        <g transform="translate(1716.000000, 291.000000)">
-                                            <g transform="translate(4.000000, 301.000000)">
-                                                <path class="color-background"
-                                                    d="M39.3,0.706666667 C38.9660984,0.370464027 38.5048767,0.192278529 38.0316667,0.216666667 C14.6516667,1.43666667 6.015,22.2633333 5.93166667,22.4733333 C5.68236407,23.0926189 5.82664679,23.8009159 6.29833333,24.2733333 L15.7266667,33.7016667 C16.2013871,34.1756798 16.9140329,34.3188658 17.535,34.065 C17.7433333,33.98 38.4583333,25.2466667 39.7816667,1.97666667 C39.8087196,1.50414529 39.6335979,1.04240574 39.3,0.706666667 Z M25.69,19.0233333 C24.7367525,19.9768687 23.3029475,20.2622391 22.0572426,19.7463614 C20.8115377,19.2304837 19.9992882,18.0149658 19.9992882,16.6666667 C19.9992882,15.3183676 20.8115377,14.1028496 22.0572426,13.5869719 C23.3029475,13.0710943 24.7367525,13.3564646 25.69,14.31 C26.9912731,15.6116662 26.9912731,17.7216672 25.69,19.0233333 L25.69,19.0233333 Z">
-                                                </path>
-                                                <path class="color-background opacity-6"
-                                                    d="M1.855,31.4066667 C3.05106558,30.2024182 4.79973884,29.7296005 6.43969145,30.1670277 C8.07964407,30.6044549 9.36054508,31.8853559 9.7979723,33.5253085 C10.2353995,35.1652612 9.76258177,36.9139344 8.55833333,38.11 C6.70666667,39.9616667 0,40 0,40 C0,40 0,33.2566667 1.855,31.4066667 Z">
-                                                </path>
-                                                <path class="color-background opacity-6"
-                                                    d="M17.2616667,3.90166667 C12.4943643,3.07192755 7.62174065,4.61673894 4.20333333,8.04166667 C3.31200265,8.94126033 2.53706177,9.94913142 1.89666667,11.0416667 C1.5109569,11.6966059 1.61721591,12.5295394 2.155,13.0666667 L5.47,16.3833333 C8.55036617,11.4946947 12.5559074,7.25476565 17.2616667,3.90166667 L17.2616667,3.90166667 Z">
-                                                </path>
-                                                <path class="color-background opacity-6"
-                                                    d="M36.0983333,22.7383333 C36.9280725,27.5056357 35.3832611,32.3782594 31.9583333,35.7966667 C31.0587397,36.6879974 30.0508686,37.4629382 28.9583333,38.1033333 C28.3033941,38.4890431 27.4704606,38.3827841 26.9333333,37.845 L23.6166667,34.53 C28.5053053,31.4496338 32.7452344,27.4440926 36.0983333,22.7383333 L36.0983333,22.7383333 Z">
-                                                </path>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('admin/create*') ? 'active' : '' }} "
+                            href="{{ route('admin.create') }}">
+                            <div
+                                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <svg width="12px" height="20px" viewBox="0 0 40 40" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <title>spaceship</title>
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g transform="translate(-1720.000000, -592.000000)" fill="#FFFFFF"
+                                            fill-rule="nonzero">
+                                            <g transform="translate(1716.000000, 291.000000)">
+                                                <g transform="translate(4.000000, 301.000000)">
+                                                    <path class="color-background"
+                                                        d="M39.3,0.706666667 C38.9660984,0.370464027 38.5048767,0.192278529 38.0316667,0.216666667 C14.6516667,1.43666667 6.015,22.2633333 5.93166667,22.4733333 C5.68236407,23.0926189 5.82664679,23.8009159 6.29833333,24.2733333 L15.7266667,33.7016667 C16.2013871,34.1756798 16.9140329,34.3188658 17.535,34.065 C17.7433333,33.98 38.4583333,25.2466667 39.7816667,1.97666667 C39.8087196,1.50414529 39.6335979,1.04240574 39.3,0.706666667 Z M25.69,19.0233333 C24.7367525,19.9768687 23.3029475,20.2622391 22.0572426,19.7463614 C20.8115377,19.2304837 19.9992882,18.0149658 19.9992882,16.6666667 C19.9992882,15.3183676 20.8115377,14.1028496 22.0572426,13.5869719 C23.3029475,13.0710943 24.7367525,13.3564646 25.69,14.31 C26.9912731,15.6116662 26.9912731,17.7216672 25.69,19.0233333 L25.69,19.0233333 Z">
+                                                    </path>
+                                                    <path class="color-background opacity-6"
+                                                        d="M1.855,31.4066667 C3.05106558,30.2024182 4.79973884,29.7296005 6.43969145,30.1670277 C8.07964407,30.6044549 9.36054508,31.8853559 9.7979723,33.5253085 C10.2353995,35.1652612 9.76258177,36.9139344 8.55833333,38.11 C6.70666667,39.9616667 0,40 0,40 C0,40 0,33.2566667 1.855,31.4066667 Z">
+                                                    </path>
+                                                    <path class="color-background opacity-6"
+                                                        d="M17.2616667,3.90166667 C12.4943643,3.07192755 7.62174065,4.61673894 4.20333333,8.04166667 C3.31200265,8.94126033 2.53706177,9.94913142 1.89666667,11.0416667 C1.5109569,11.6966059 1.61721591,12.5295394 2.155,13.0666667 L5.47,16.3833333 C8.55036617,11.4946947 12.5559074,7.25476565 17.2616667,3.90166667 L17.2616667,3.90166667 Z">
+                                                    </path>
+                                                    <path class="color-background opacity-6"
+                                                        d="M36.0983333,22.7383333 C36.9280725,27.5056357 35.3832611,32.3782594 31.9583333,35.7966667 C31.0587397,36.6879974 30.0508686,37.4629382 28.9583333,38.1033333 C28.3033941,38.4890431 27.4704606,38.3827841 26.9333333,37.845 L23.6166667,34.53 C28.5053053,31.4496338 32.7452344,27.4440926 36.0983333,22.7383333 L36.0983333,22.7383333 Z">
+                                                    </path>
+                                                </g>
                                             </g>
                                         </g>
                                     </g>
-                                </g>
-                            </svg>
-                        </div>
-                        <span class="nav-link-text ms-1">Sign Up</span>
-                    </a>
-                </li>
+                                </svg>
+                            </div>
+                            <span class="nav-link-text ms-1">Sign Up</span>
+                        </a>
+                    </li>
                 @endif
             </ul>
         </div>
@@ -568,21 +680,21 @@
                 <div class="col-12">
                     @yield('category')
                     <div class="card mb-4">
-                {{--  --}}
-                {{--  --}}
-                {{--  --}}
-                {{--  --}}
-                {{--  --}}
+                        {{--  --}}
+                        {{--  --}}
+                        {{--  --}}
+                        {{--  --}}
+                        {{--  --}}
 
-                @yield('content')
+                        @yield('content')
 
-                {{--  --}}
-                {{--  --}}
-                {{--  --}}
-                {{--  --}}
-                {{--  --}}
-                {{--  --}}
-                {{--  --}}
+                        {{--  --}}
+                        {{--  --}}
+                        {{--  --}}
+                        {{--  --}}
+                        {{--  --}}
+                        {{--  --}}
+                        {{--  --}}
                     </div>
                 </div>
             </div>
@@ -928,7 +1040,7 @@
 
 </body>
 
-    {{-- <script type="text/javascript">
+{{-- <script type="text/javascript">
 
         setInterval(ajaxCall, 300);
 
