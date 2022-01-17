@@ -18,6 +18,11 @@
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold"> Last 28 days Product </p>
                                 <h5 class="font-weight-bolder mb-0">
                                     {{ $productCountDate }}
+                                    @if ($productPercentage >= 0)
+                                    <span class="text-success text-sm font-weight-bolder">+{{$productPercentage}}%</span>
+                                    @else
+                                    <span class="text-danger text-sm font-weight-bolder">{{$productPercentage}}%</span>
+                                    @endif
                                     {{-- <span class="text-success text-sm font-weight-bolder">+55%</span> --}}
                                 </h5>
                             </div>
@@ -40,7 +45,11 @@
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Last 28 days Users</p>
                                 <h5 class="font-weight-bolder mb-0">
                                     {{ $userCountDate }}
-                                    {{-- <span class="text-success text-sm font-weight-bolder">+3%</span> --}}
+                                    @if ($userPercentage >= 0)
+                                    <span class="text-success text-sm font-weight-bolder">+{{$userPercentage}}%</span>
+                                    @else
+                                    <span class="text-danger text-sm font-weight-bolder">{{$userPercentage}}%</span>
+                                    @endif
                                 </h5>
                             </div>
                         </div>
@@ -62,7 +71,11 @@
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Last 28 Join Courses</p>
                                 <h5 class="font-weight-bolder mb-0">
                                     {{ $joinCoursesCountDate }}
-                                    {{-- <span class="text-danger text-sm font-weight-bolder">-2%</span> --}}
+                                    @if ($joinCoursesPercentage >= 0)
+                                    <span class="text-success text-sm font-weight-bolder">+{{$joinCoursesPercentage}}%</span>
+                                    @else
+                                    <span class="text-danger text-sm font-weight-bolder">{{$joinCoursesPercentage}}%</span>
+                                    @endif
                                 </h5>
                             </div>
                         </div>
@@ -83,7 +96,7 @@
                             <div class="numbers">
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Sales</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    $103,430
+                                    {{-- $103,430 --}}
                                     {{-- <span class="text-success text-sm font-weight-bolder">+5%</span> --}}
                                 </h5>
                             </div>
