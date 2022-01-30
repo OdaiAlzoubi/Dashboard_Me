@@ -37,7 +37,7 @@
     {{-- BootStrap 4.6 --}}
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> --}}
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     {{-- Ajax --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -469,7 +469,7 @@
                     </a>
                 </li>
                 {{-- Logout --}}
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link {{ request()->is('logout*') ? 'active' : '' }} "
                         href="{{ route('logout') }}">
                         <div
@@ -496,7 +496,7 @@
                         </div>
                         <span class="nav-link-text ms-1">Logout</span>
                     </a>
-                </li>
+                </li> --}}
                 @if (Auth::user()->role < 1)
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('admin/create*') ? 'active' : '' }} "
@@ -560,12 +560,29 @@
                         </div> --}}
                     </div>
                     <ul class="navbar-nav  justify-content-end">
-                        <li class="nav-item d-flex align-items-center">
+                        {{-- <li class="nav-item d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
                                 <span class="d-sm-inline d-none">Sign In</span>
                             </a>
 
+                        </li> --}}
+                        <li class="nav-item dropdown open" style="padding-left: 15px;">
+                            <a href="{{ route('admin.profile', Auth::user()->id) }}"
+                                class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
+                                data-toggle="dropdown" aria-expanded="false" style="font-size: 15px; ">
+                                <img src="{{ asset('image/admin/' . Auth::user()->image) }}" alt=""
+                                    style="border-radius: 50%; width: 30px; height: 30px;">
+                                {{ Auth::user()->F_name . ' ' . Auth::user()->L_name }}
+                            </a>
+                            <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('admin.profile', Auth::user()->id) }}">
+                                    Profile</a>
+
+                                <a class="dropdown-item" href="{{ route('logout') }}"><i
+                                        class="fa fa-sign-out pull-right"></i>
+                                    Log Out</a>
+                            </div>
                         </li>
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
@@ -581,7 +598,7 @@
                                 <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
                             </a>
                         </li>
-                        <li class="nav-item dropdown pe-2 d-flex align-items-center">
+                        {{-- <li class="nav-item dropdown pe-2 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-bell cursor-pointer"></i>
@@ -664,7 +681,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </div>
