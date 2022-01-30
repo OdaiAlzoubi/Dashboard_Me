@@ -201,10 +201,10 @@ Route::middleware('auth')->group(function () {
     // Dashboard
     Route::namespace('dashboard')->group(function () {
 
-        // Route::prefix('dashboard')->group(function () {
+        Route::prefix('dashboard')->group(function () {
 
         Route::get('/home', [StatisticControllers::class, 'userCount'])->name('dashboard');
-        // });
+        });
     });
 
     // Admin
