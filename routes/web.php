@@ -179,6 +179,7 @@ Route::middleware('auth')->group(function () {
 
             // Report
             Route::get('/report-notification', [NotificationReportVideoController::class, 'report'])->name('report.notification');
+            Route::get('/report-notification/red', [NotificationReportVideoController::class, 'red'])->name('report.notification.red');
         });
 
     });
@@ -221,8 +222,11 @@ Route::middleware('auth')->group(function () {
             Route::get('/back-soft-delete/{id}', [ProfileController::class, 'backFromSoftDelete'])->name('admin.back.soft.delete');
             Route::get('/soft-delete/show', [ProfileController::class, 'softDeleteShow'])->name('admin.soft.delete.show');
             Route::delete('/delete/{id}', [ProfileController::class, 'destroy'])->name('admin.delete');
+            Route::put('/updatePerm/{id}', [ProfileController::class, 'updatePerm'])->name('admin.updatePerm');
+            Route::get('/showPerm', [ProfileController::class, 'showPerm'])->name('admin.showPerm');
         });
     });
-
     Route::get('/notification-count', [NotificationUserController::class, 'getNotitificationCount'])->name('notificationCount');
+
 });
+

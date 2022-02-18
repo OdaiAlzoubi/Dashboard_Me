@@ -5,13 +5,6 @@
 
 @section('content')
 
-
-
-
-
-
-
-
     <div class="" >
         <div class="row d-flex ">
             <div class="">
@@ -61,7 +54,7 @@
                                                         <strong class="text-dark">Price:</strong>&nbsp; {{$product->price}}
                                                     </li>
                                                     <li class="list-group-item border-0 ps-0 text-sm">
-                                                        <strong class="text-dark">Size:</strong> &nbsp; {{$product->size}}
+                                                        <strong class="text-dark">Size:</strong> &nbsp; {{$product->size . ' ' . $product->unit}}
                                                     </li>
                                                     <li class="list-group-item border-0 ps-0 text-sm">
                                                         <strong class="text-dark">Category :</strong>&nbsp; {{$product->categoryProduct->name}}
@@ -146,10 +139,12 @@
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="user d-flex flex-row align-items-center">
                                                             <img
-                                                                src="{{$commant->user->image}}" width="30"
-                                                                class="user-img rounded-circle mr-2">
+                                                                src="{{asset('image/user/' .$commant->user->image)}}" width="40" height="30"
+                                                                class="border-radius-lg shadow">
                                                                 <span>
-                                                                    <small class="font-weight-bold text-primary">{{$commant->user->f_name . ' '. $commant->user->l_name}}</small>
+                                                                    <a href="{{route('user.show' , $commant->user->id)}}">
+                                                                        <small class="font-weight-bold text-primary">{{$commant->user->f_name . ' '. $commant->user->l_name}}</small>
+                                                                    </a>
                                                                     <small class="font-weight-bold">{{$commant->comment	}}</small>
                                                                 </span>
                                                         </div>
@@ -157,12 +152,12 @@
                                                     </div>
                                                     <div
                                                         class="action d-flex justify-content-between mt-2 align-items-center">
-                                                        <div class="reply px-4">
+                                                        {{-- <div class="reply px-4">
                                                             <small>Remove</small>
                                                             <span class="dots"></span>
                                                                 <small>Reply</small> <span class="dots"></span>
                                                                 <small>Translate</small>
-                                                        </div>
+                                                        </div> --}}
                                                         {{-- <div class="icons align-items-center"> <i
                                                                 class="fa fa-star text-warning"></i> <i
                                                                 class="fa fa-check-circle-o check-icon"></i>

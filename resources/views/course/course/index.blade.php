@@ -19,7 +19,8 @@
             {{-- Soft Delete --}}
             <div class="col-6 text-end ">
 
-                <select class="form-select pt-3" name="filter_course" id="filter_course" style="width: 28%; display: inline;">
+                <select class="form-select pt-3" name="filter_course" id="filter_course"
+                    style="width: 28%; display: inline;">
                     <option value="{{ route('Course.index') }}">All</option>
                     @foreach ($categories as $value)
                         @if ($value->id == request()->id)
@@ -51,7 +52,7 @@
                         <th scope="col">Image</th>
                         <th scope="col">Name</th>
                         <th scope="col">Presenter</th>
-                        <th scope="col">Description</th>
+                        <th scope="col" class="text-center">Description</th>
                         <th scope="col">Category</th>
                         <th scope="col" class="text-center">Action</th>
                     </tr>
@@ -73,8 +74,8 @@
                             <td>
                                 <p class="card-title container">{{ $course->presenter }}</p>
                             </td>
-                            <td style=" word-wrap: break-word;" dir="rtl" lang="ar">
-                                    <p class="card-text container">{{ $course->description }}</p>
+                            <td  style=" " dir="rtl" lang="ar">
+                                <textarea  class="card-text container" style="border-style:none;  height: auto; overflow: hidden;">{{ $course->description }}</textarea>
                             </td>
                             <td>
                                 <p class="card-text container ">{{ $course->categoryCourse->name }}</p>
@@ -88,11 +89,11 @@
                                             style="color: #0dcaf0 ; font-size: 25px; margin-left: -18px;"></i>
                                     </a>
                                     @php
-                                        $check = false ;
+                                        $check = false;
                                     @endphp
-                                    <a href="{{ route('course.edit',[ $course->id , 'check'=>$check]) }}" class="btn btn-link"
-                                        style="width: 0px; height: 0px;" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Edit">
+                                    <a href="{{ route('course.edit', [$course->id, 'check' => $check]) }}"
+                                        class="btn btn-link" style="width: 0px; height: 0px;" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Edit">
                                         <i class="fas fa-edit"
                                             style="color: #198754 ; font-size: 25px; margin-left: -14px;"></i>
                                     </a>

@@ -19,7 +19,8 @@ class ReportVideo extends Model
     protected $fillable = [
         'id_user',
         'id_video',
-        'message'
+        'message',
+        'deleted_at'
 
     ];
 

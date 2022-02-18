@@ -16,7 +16,7 @@
             <div class="row gx-4">
                 <div class="col-auto">
                     <div class="avatar avatar-xl position-relative">
-                        <img src="{{ asset('image/admin/' . $admin->image) }}" alt="profile_image"
+                        <img src="{{ asset('image/admin/' . $admin->image) }}" alt="profile_image" width="70px" height="50px"
                             class="w-100 border-radius-lg shadow-sm">
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                                 enctype="multipart/form-data" class="container mt-5">
                                 @csrf
                                 @method('PUT')
-                                @if ($admin->role == 0)
+                                {{-- @if ($admin->role == 0) --}}
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control  @error('F_name') is-invalid @enderror"
                                             name="F_name" placeholder="Name" value="{{ $admin->F_name }}">
@@ -78,7 +78,7 @@
                                         {{-- Error --}}
                                         @include('common.error', [$name='L_name'])
                                     </div>
-                                @endif
+                                {{-- @endif --}}
                                 <div class="form-floating mb-3">
                                     <input type="email" class="form-control  @error('email') is-invalid @enderror"
                                         id="floatingInput" name="email" placeholder="example@gmail.com"
@@ -95,6 +95,7 @@
                                     {{-- Error --}}
                                     @include('common.error', [$name='phone'])
                                 </div>
+
                                 <div class="form-floating mb-3">
                                     <input type="file" class="form-control  @error('image') is-invalid @enderror"
                                         id="floatingInput" name="image" placeholder="User image">
@@ -102,8 +103,6 @@
                                     {{-- Error --}}
                                     @include('common.error', [$name='image'])
                                 </div>
-
-
 
                                 <button type="submit" class="btn btn-primary">Save profile</button>
                                 <a href="{{ route('admin.profile') }}" class="btn btn-secondary"

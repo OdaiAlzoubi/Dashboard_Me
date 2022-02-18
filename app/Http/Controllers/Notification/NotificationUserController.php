@@ -21,12 +21,23 @@ class NotificationUserController extends Controller
     }
 
     //
+    // public function getNotitificationCount()
+    // {
+    //     $count = User::whereNull('deleted_at')->where('email_validate','=','1')->count();
+    //     // $countProduct = Product::whereNull('deleted_at')->count();
+    //     // $countReport = ReportVideo::whereNull('')->count();
+    //     // $count = $countUser + $countProduct + $countReport ;
+    //     return response()->json([
+    //         'status' => 200,
+    //         'count' => $count,
+    //         'data' => $count,
+    //     ]);
+    // }
+
     public function getNotitificationCount()
     {
         $count = User::whereNull('deleted_at')->where('email_validate','=','1')->count();
-        $countProduct = Product::whereNull('deleted_at')->count();
-        $countReport = ReportVideo::whereNull('')->count();
-        // $count = $countUser + $countProduct + $countReport ;
+
         return response()->json([
             'status' => 200,
             'count' => $count,

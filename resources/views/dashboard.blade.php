@@ -94,16 +94,15 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Sales</p>
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number User</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    {{-- $103,430 --}}
-                                    {{-- <span class="text-success text-sm font-weight-bolder">+5%</span> --}}
+                                    {{$userCountAll}}
                                 </h5>
                             </div>
                         </div>
                         <div class="col-4 text-end">
                             <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
+                                <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
                             </div>
                         </div>
                     </div>
@@ -137,7 +136,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">User</th>
                                     <th scope="col">Image</th>
-                                    <th scope="col">Name</th>
+                                    <th scope="col" class="text-center">Name</th>
                                     {{-- <th scope="col">Description</th> --}}
                                     <th scope="col">Category</th>
                                     <th scope="col" class="text-center">Action</th>
@@ -222,12 +221,12 @@
                         @foreach ($userRandom as $user)
                             <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
                                 <div class="avatar  me-3">
-                                    <img src="{{ asset('image/user/' . $user->image) }}" alt="kal"
+                                    <img src="{{ asset('image/user/' . $user->image) }}" alt="kal" width="70px" height="50px"
                                         class="border-radius-lg shadow ">
                                 </div>
                                 <div class="d-flex align-items-start flex-column justify-content-center">
                                     <h6 class="card-title">{{ $user->f_name . ' ' . $user->l_name }}</h6>
-                                    <p class="mb-0 text-xs">Hi! I need more information..</p>
+                                    {{-- <p class="mb-0 text-xs">Hi! I need more information..</p> --}}
                                 </div>
                                 <a href="{{ route('user.show', $user->id) }}" class="btn btn-link pe-3 ps-0 mb-0 ms-auto">
                                     <i class="fas fa-eye" style="color: #0dcaf0 ; font-size: 25px; margin-left: -18px;"></i>

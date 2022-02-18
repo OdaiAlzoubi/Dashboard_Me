@@ -11,7 +11,7 @@
 
     <div class="btn-group container gap-4 pt-3">
 
-        <a href="{{ route('user.add.notification') }}" class="btn btn-primary" aria-current="page">User Notification</a>
+        <a href="{{ route('user.add.notification') }}" class="btn btn-success" aria-current="page">User Notification</a>
         <a href="{{ route('product.add.notification') }}" class="btn btn-success">Product Notification</a>
         <a href="{{ route('report.notification') }}" class="btn btn-success">Report Video Notification</a>
 
@@ -58,7 +58,9 @@
                                     alt="" width="70px" height="70px">
                             </td>
                             <td>
-                                <h6 class="card-title">{{ $product->name }}</h6>
+                                <a href="{{ route('product.show', $product->id) }}">
+                                <h6 class="card-title" style="color: red">{{ $product->name }}</h6>
+                                </a>
                             </td>
                             {{-- <td>
                                 <h6 class="card-title">{{ $product->description }}</h6>

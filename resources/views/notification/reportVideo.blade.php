@@ -10,7 +10,7 @@
 
     <div class="btn-group container gap-4 pt-3">
 
-        <a href="{{ route('user.add.notification') }}" class="btn btn-primary" aria-current="page">User Notification</a>
+        <a href="{{ route('user.add.notification') }}" class="btn btn-success" aria-current="page">User Notification</a>
         <a href="{{ route('product.add.notification') }}" class="btn btn-success">Product Notification</a>
         <a href="{{ route('report.notification') }}" class="btn btn-success">Report Video Notification</a>
 
@@ -34,7 +34,7 @@
                         <th scope="col">#</th>
                         <th scope="col">User</th>
                         <th scope="col">Course</th>
-                        <th scope="col">Video</th>
+                        {{-- <th scope="col">Video</th> --}}
                         <th scope="col">Message</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -48,22 +48,26 @@
                                 <p>{{ ++$count }}</p>
                             </th>
                             <td>
-                                <h6 class="card-title">{{ $reportVideo->user->name }}</h6>
+                                <h6 class="card-title">{{ $reportVideo->user->f_name . ' ' .  $reportVideo->user->l_name }}</h6>
                             </td>
+
                             <td>
                                 <h6 class="card-title">{{ $reportVideo->video->course->name }}</h6>
                             </td>
-                            <td>
+
+                            {{-- <td>
                                 <h6 class="card-title">{{ $reportVideo->user->name }}</h6>
-                            </td>
+                            </td> --}}
                             <td>
                                 <h6 class="card-title">{{ $reportVideo->message }}</h6>
                             </td>
                             <td>
                                 <div class="btn-group gap-1">
 
-                                    <a href="{{ route('video.show', $reportVideo->video->id) }}" class="btn btn-primary"
+                                    <a href="{{ route('video.show', $reportVideo->video->id) }}" class="btn btn-primary"  target="_blank"
                                         aria-current="page">Show Video</a>
+                                        {{-- <a href="{{ route('report.notification.red', ['user_id'=>$reportVideo->user->id ,'video_id'=>$reportVideo->video->id]) }}"
+                                            class="btn btn-success" aria-current="page">Acceptance</a> --}}
                                 </div>
                             </td>
                         </tr>

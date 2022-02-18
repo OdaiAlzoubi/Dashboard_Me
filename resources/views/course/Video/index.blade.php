@@ -30,7 +30,7 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Video</th>
+                        <th scope="col" >Video</th>
                         <th scope="col">video Order</th>
                         <th scope="col">Course</th>
                         <th scope="col" class="text-center">Action</th>
@@ -45,11 +45,12 @@
                                 <p>{{ ++$count }}</p>
                             </th>
                             <td>
-                                <h6 class="card-title container">{{ $video->name }}</h6>
+                                <p class="card-title container">{{ $video->name }}</p>
                             </td>
                             <td>
                                 <div>
                                     <iframe width="70" height="70"
+                                    style="width: 200px; height: -webkit-fill-available;"
                                         src="https://www.youtube-nocookie.com/embed/{{ $video->url }}"
                                         title="YouTube video player" frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -57,10 +58,10 @@
                                 </div>
                             </td>
                             <td>
-                                <h6 class="card-title container">{{ $video->video_Order }}</h6>
+                                <p class="card-title container">{{ $video->video_order }}</p>
                             </td>
                             <td>
-                                <h6 class="card-title container">{{ $video->course->name }}</h6>
+                                <p class="card-title container">{{ $video->course->name }}</p>
                             </td>
                             <td class="text-center">
                                 {{--  --}}
@@ -68,16 +69,19 @@
 
                                     {{-- <a href="{{ route('video.show', $video->id) }}" class="btn btn-primary"
                                         aria-current="page">Show</a> --}}
-                                    <a href="{{ route('video.edit', $video->id) }}" class="btn btn-link" style="width: 0px; height: 0px;"
-                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
-                                        <i class="fas fa-edit" style="color: #198754 ; font-size: 25px; margin-left: -14px;"></i>
+                                    <a href="{{ route('video.edit', $video->id) }}" class="btn btn-link"
+                                        style="width: 0px; height: 0px;" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Edit">
+                                        <i class="fas fa-edit"
+                                            style="color: #198754 ; font-size: 25px; margin-left: -14px;"></i>
                                     </a>
                                     <form action="{{ route('video.delete', $video->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-link"style="width: 0px; height: 0px;"
-                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
-                                        <i class="fas fa-trash" style="color: red ; font-size: 25px; margin-left: -14px;" >&#xE872;</i>
+                                        <button type="submit" class="btn btn-link" style="width: 0px; height: 0px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+                                            <i class="fas fa-trash"
+                                                style="color: red ; font-size: 25px; margin-left: -14px;">&#xE872;</i>
                                         </button>
                                     </form>
                                 </div>

@@ -21,12 +21,12 @@ class ProductController extends Controller
         if ($request->id) {
             $products = Product::where('deleted_at', '=', '0')->where('category', '=', $request->id)->latest(
                 'id'
-            )->paginate(5);
+            )->paginate(10);
         }
         else{
             $products = Product::where('deleted_at', '=', '0')->latest(
                 'id'
-            )->paginate(5);
+            )->paginate(10);
         }
         $categories = CategoryProduct::get();
         $count = 0;
@@ -160,7 +160,7 @@ class ProductController extends Controller
             'presenter',
             'description',
             'image'
-        )->paginate(4);
+        )->paginate(10);
         $count = 0;
         return view('product.product.softDelete', compact('products', 'count'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -176,7 +176,7 @@ class ProductController extends Controller
             'size',
             'unit',
             'count_visits',
-        )->paginate(4);
+        )->paginate(10);
         $count = 0;
         return view('product.categoryProduct.showProduct', compact('products', 'count'))->with('i', (request()->input('page', 1) - 1) * 5);
     }

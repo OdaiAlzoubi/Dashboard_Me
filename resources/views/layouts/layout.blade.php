@@ -50,7 +50,7 @@
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand m-0" href="https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html"
+            <a class="navbar-brand m-0" href="{{route('dashboard')}}"
                 target="_blank">
                 <img src="{{ asset('./Dashboard/img/logo-ct.png') }}" class="navbar-brand-img h-100" alt="main_logo">
                 <span class="ms-1 font-weight-bold">Made in my home</span>
@@ -359,10 +359,12 @@
                                     <g>
                                         <g>
                                             <path class="color-background" d="M426.667,0c-47.061,0-85.333,38.272-85.333,85.333s38.272,85.333,85.333,85.333S512,132.395,512,85.333
-           S473.728,0,426.667,0z"></path>
+                                                S473.728,0,426.667,0z">
+                                            </path>
                                             <path class="color-background" d="M298.667,85.333c0-14.976,2.731-29.291,7.467-42.667h-220.8C38.272,42.667,0,80.939,0,128v298.667
-           C0,473.728,38.272,512,85.333,512H384c47.061,0,85.333-38.272,85.333-85.333v-220.8c-13.376,4.757-27.691,7.467-42.667,7.467
-           C356.075,213.333,298.667,155.925,298.667,85.333z"></path>
+                                                C0,473.728,38.272,512,85.333,512H384c47.061,0,85.333-38.272,85.333-85.333v-220.8c-13.376,4.757-27.691,7.467-42.667,7.467
+                                                C356.075,213.333,298.667,155.925,298.667,85.333z">
+                                            </path>
                                         </g>
 
                                         <g>
@@ -408,23 +410,25 @@
                                 viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
                                 <g>
                                     <g>
-                                        <path class="color-background" d="M337.118,269.871c25.13,19.968,45.376,48.935,57.969,83.351c66.033-3.371,112.442-19.337,112.442-19.337
-       c0-61.853-25.654-116.077-64.162-146.426c-16.932,20.482-42.531,33.537-71.18,33.537c-8.823,0-17.355-1.242-25.436-3.554
-       c0.387,3.415,0.593,6.884,0.593,10.402C347.345,242.999,343.651,257.29,337.118,269.871z" />
-                                        <path class="color-background" d="M174.883,269.871c-6.532-12.581-10.227-26.872-10.227-42.027c0-3.51,0.205-6.971,0.59-10.378
-       c-7.717,2.093-15.833,3.218-24.213,3.218c-28.649,0-54.25-13.055-71.181-33.537C31.344,217.495,5.69,271.719,5.69,333.572
-       c0,0,44.998,16.175,111.316,19.4C129.605,318.666,149.814,289.791,174.883,269.871z" />
+                                        <path class="color-background"
+                                            d="M337.118,269.871c25.13,19.968,45.376,48.935,57.969,83.351c66.033-3.371,112.442-19.337,112.442-19.337
+                                            c0-61.853-25.654-116.077-64.162-146.426c-16.932,20.482-42.531,33.537-71.18,33.537c-8.823,0-17.355-1.242-25.436-3.554
+                                            c0.387,3.415,0.593,6.884,0.593,10.402C347.345,242.999,343.651,257.29,337.118,269.871z" />
+                                        <path class="color-background"
+                                            d="M174.883,269.871c-6.532-12.581-10.227-26.872-10.227-42.027c0-3.51,0.205-6.971,0.59-10.378
+                                            c-7.717,2.093-15.833,3.218-24.213,3.218c-28.649,0-54.25-13.055-71.181-33.537C31.344,217.495,5.69,271.719,5.69,333.572
+                                            c0,0,44.998,16.175,111.316,19.4C129.605,318.666,149.814,289.791,174.883,269.871z" />
                                     </g>
                                     <path class="color-background" d="M391.343,433.041c0-61.853-25.654-116.077-64.162-146.426c-16.932,20.482-42.531,33.537-71.18,33.537
-   c-28.649,0-54.25-13.055-71.181-33.537c-38.508,30.349-64.163,84.573-64.163,146.426c0,0,55.51,19.959,134.096,19.959
-   S391.343,433.041,391.343,433.041z" />
+                                        c-28.649,0-54.25-13.055-71.181-33.537c-38.508,30.349-64.163,84.573-64.163,146.426c0,0,55.51,19.959,134.096,19.959
+                                        S391.343,433.041,391.343,433.041z" />
                                     <circle class="color-background" cx="256.001" cy="227.844" r="74.844" />
                                     <path class="color-background" d="M372.188,53.844c-41.336,0-74.845,33.508-74.845,74.844c0,6.554,0.849,12.909,2.431,18.967
-   c19.537,10.687,34.737,28.307,42.3,49.551c9.217,4.057,19.397,6.325,30.114,6.325c41.334,0,74.844-33.508,74.844-74.844
-   S413.522,53.844,372.188,53.844z" />
+                                        c19.537,10.687,34.737,28.307,42.3,49.551c9.217,4.057,19.397,6.325,30.114,6.325c41.334,0,74.844-33.508,74.844-74.844
+                                        S413.522,53.844,372.188,53.844z" />
                                     <path class="color-background" d="M213.452,147.323c1.579-6.053,2.425-12.401,2.425-18.948c0-41.336-33.51-74.844-74.844-74.844
-   c-41.336,0-74.845,33.508-74.845,74.844s33.509,74.844,74.845,74.844c10.484,0,20.461-2.164,29.52-6.057
-   C178.2,175.716,193.632,157.968,213.452,147.323z" />
+                                        c-41.336,0-74.845,33.508-74.845,74.844s33.509,74.844,74.845,74.844c10.484,0,20.461-2.164,29.52-6.057
+                                        C178.2,175.716,193.632,157.968,213.452,147.323z" />
                                 </g>
                             </svg>
 
@@ -593,11 +597,11 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="nav-item px-3 d-flex align-items-center">
+                        {{-- <li class="nav-item px-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body p-0">
                                 <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
                             </a>
-                        </li>
+                        </li> --}}
                         {{-- <li class="nav-item dropdown pe-2 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -727,7 +731,7 @@
                                 ,Made In My Home .
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        {{-- <div class="col-lg-6">
                             <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                                 <li class="nav-item">
                                     <a href="https://www.creative-tim.com" class="nav-link text-muted"
@@ -746,16 +750,16 @@
                                         target="_blank">License</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </footer>
         </div>
     </main>
     <div class="fixed-plugin">
-        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+        {{-- <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
             <i class="fa fa-cog py-2"> </i>
-        </a>
+        </a> --}}
         <div class="card shadow-lg ">
             <div class="card-header pb-0 pt-3 ">
                 <div class="float-start">
@@ -1058,33 +1062,33 @@
 </body>
 
 {{-- <script type="text/javascript">
+    setInterval(ajaxCall, 300);
 
-        setInterval(ajaxCall, 300);
+    function ajaxCall() {
+        $.ajax({
 
-        function ajaxCall() {
-            $.ajax({
-
-                url: "{{route('notificationCount')}}",
-                method: "get",
-                contentType: false,
-                processData: false,
-                dataType: 'json',
-                data: {'id': 1},
-                success: function (data) {
-                    alert(1);
-                    const Notification = data.count ;
-                    const N = document.getElementById('odai');
-                    if (Notification > 0) {
-                        N.className += 'd-none';
-                    }
-                    else{
-                        N = N.className.replace('d-none','');
-                    }
+            url: "{{ route('notificationCount') }}",
+            method: "get",
+            contentType: false,
+            processData: false,
+            dataType: 'json',
+            data: {
+                'id': 1
+            },
+            success: function(data) {
+                // alert(1);
+                // console.log('Odai');
+                const Notification = data.count;
+                const N = document.getElementById('odai');
+                if (Notification > 0) {
+                    N.className += 'd-none';
+                } else {
+                    N = N.className.replace('d-none', '');
                 }
-            });
+            }
+        });
 
-        }
-
-    </script> --}}
+    }
+</script> --}}
 
 </html>

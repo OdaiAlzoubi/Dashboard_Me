@@ -32,7 +32,7 @@
                             @include('common.error', [$name='url'])
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control @error('video_Order') is-invalid @enderror" name="video_Order" value="{{ $video->video_Order }}"
+                            <input type="text" class="form-control @error('video_Order') is-invalid @enderror" name="video_Order" value="{{ $video->video_order }}"
                                 >
                             <label for="floatingInput">Video Video Order</label>
                             {{-- Error --}}

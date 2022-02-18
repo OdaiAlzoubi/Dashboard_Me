@@ -16,7 +16,7 @@ class Video extends Model
         'id_course',
         'url',
         'name',
-        'video_Order'
+        'video_order',
     ];
 
     /**

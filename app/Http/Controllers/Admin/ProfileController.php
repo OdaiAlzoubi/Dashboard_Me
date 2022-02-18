@@ -186,4 +186,6 @@ class ProfileController extends Controller
         $count = 0;
         return view('admin.softDelete', compact('admins', 'count'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+    
 }

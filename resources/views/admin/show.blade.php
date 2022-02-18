@@ -69,7 +69,6 @@
                                     @elseif ($admin->role == 2)
                                         {{ 'Manager' }}
                                     @endif
-                                    {{-- {{ $admin->role }} --}}
 
                                 </p>
                             </td>

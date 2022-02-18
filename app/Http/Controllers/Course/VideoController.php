@@ -21,10 +21,10 @@ class VideoController extends Controller
             'url',
             'name',
             'video_Order'
-        )->paginate(5);
+        )->paginate(10);
 
-        $count =0 ;
-        return view('course.Video.index', compact('videos' , 'count'));
+        $count = 0;
+        return view('course.Video.index', compact('videos', 'count'));
     }
 
     /**
@@ -32,13 +32,19 @@ class VideoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $courses = Course::all();
-        if ($courses->count() === 0) {
-            return view('course.course.create')->with('success', 'Please create a Course first.');
+        $check = false;
+        if ($request->id) {
+            $courses = Course::where('id', '=', $request->id)->first();
+            $check = true;
+        } else {
+            $courses = Course::all();
+            if ($courses->count() === 0) {
+                return view('course.course.create')->with('success', 'Please create a Course first.');
+            }
         }
-        return view('course.Video.create', compact('courses'));
+        return view('course.Video.create', compact('courses', 'check'));
     }
 
     /**
@@ -50,24 +56,29 @@ class VideoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_course'=>'required',
-            'url'=>'required|url|max:1000',
-            'name'=>'required|max:100',
-            'video_Order'=>'required|numeric',
+            'id_course' => 'required',
+            'url' => 'required|url|max:1000',
+            'name' => 'required|max:100',
+            'video_Order' => 'required|numeric',
         ]);
 
         //
         $url = $request->input('url');
-        $url = preg_split("/[=]/",$url);
+        // $url = preg_split("/[=]/",$url);
+        $url = parse_url($url);
+        parse_str($url['query'], $url);
         $video = new Video;
         $video->id_course = $request->input('id_course');
         // $video->url = $request->input('url');
-        $video->url = $url[1];
+        $video->url = $url['v'];
         $video->name = $request->input('name');
         $video->video_Order = $request->input('video_Order');
 
 
         $video->save();
+        if ($request->check) {
+            return redirect()->route('course.get.video.by.course', $video->id_course)->with('success', 'This video has been Stored.');
+        }
         return redirect()->route('video.index')->with('success', 'This video has been Stored.');
     }
 
@@ -79,7 +90,7 @@ class VideoController extends Controller
      */
     public function show($id)
     {
-        $video = Video::where('id','=',$id)->first();
+        $video = Video::where('id', '=', $id)->first();
         return view('course.Video.show', compact('video'));
     }
 
@@ -91,9 +102,9 @@ class VideoController extends Controller
      */
     public function edit($id)
     {
-        $video = Video::where('id','=',$id)->first();
-        $courses = Course::where('id','<>',$video->id_course)->get();
-        return view('course.Video.edit', compact('video','courses'));
+        $video = Video::where('id', '=', $id)->first();
+        $courses = Course::where('id', '<>', $video->id_course)->get();
+        return view('course.Video.edit', compact('video', 'courses'));
     }
 
     /**
@@ -105,17 +116,21 @@ class VideoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $video = Video::where('id','=',$id)->first();
+        $url = $request->input('url');
+        // $url = preg_split("/[=]/",$url);
+        $url = parse_url($url);
+        parse_str($url['query'], $url);
+        $video = Video::where('id', '=', $id)->first();
 
         $request->validate([
-            'id_course'=>'required',
-            'url'=>'required|url|max:1000',
-            'name'=>'required|max:100',
-            'video_Order'=>'required|numeric',
+            'id_course' => 'required',
+            'url' => 'required|url|max:1000',
+            'name' => 'required|max:100',
+            'video_Order' => 'required|numeric',
         ]);
 
         $video->id_course = $request->input('id_course');
-        $video->url = $request->input('url');
+        $video->url = $url['v'];
         $video->name = $request->input('name');
         $video->video_Order = $request->input('video_Order');
 
@@ -134,14 +149,16 @@ class VideoController extends Controller
     {
         $video = Video::where('id', '=', $id)->first();
         $video->delete();
-        return redirect()->route('video.index')->with('success','Video Deleted.');
+        return redirect()->route('video.index')->with('success', 'Video Deleted.');
     }
 
 
-    public function getVideosByCourseId ($id){
+    public function getVideosByCourseId($id)
+    {
+        $course = Course::where('id', '=', $id)->first();
         $videos = Video::where('id_course', '=', $id)->get();
-        $count = 0 ;
+        $count = 0;
         // dd($courses);
-        return view('course.course.showVideos', compact('videos', 'count'));
+        return view('course.course.showVideos', compact('videos', 'count', 'id', 'course'));
     }
 }

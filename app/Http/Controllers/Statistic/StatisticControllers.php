@@ -27,7 +27,7 @@ class StatisticControllers extends Controller
         $productCountDate = Product::where('deleted_at', '=', '0')->where('product_date', '>', $date)->count();
         $userRandom = User::where('deleted_at', '=', '0')->inRandomOrder('id')->limit(5)->get();
         //
-        $products = Product::inRandomOrder('id')->limit(5)->get();
+        $products = Product::where('deleted_at', '=', '0')->inRandomOrder('id')->limit(5)->get();
         // dd($userCountDate);
 
         // Graphical
@@ -45,20 +45,24 @@ class StatisticControllers extends Controller
             $productPercentage = $this->productPercentage();
             $joinCoursesPercentage = $this->joinCoursesPercentage();
 
+
+            $userCountAll = User::get()->count();
+            // dd($userCountAll);
         return view('dashboard', compact(
             'userCountDate', 'productCountDate','joinCoursesCountDate' ,
             'products', 'userRandom',
             'userData' ,'productData',
-            'userPercentage' , 'productPercentage' , 'joinCoursesPercentage'
+            'userPercentage' , 'productPercentage' , 'joinCoursesPercentage',
+            'userCountAll'
         ));
     }
 
 
-    protected function getUser()
-    {
-        $userRandom = User::where('deleted_at', '=', '0')->inRandomOrder('id')->limit(5)->get();
-        return $userRandom;
-    }
+    // protected function userCount()
+    // {
+
+    //     // return $userCountAll;
+    // }
 
     // User Percentage
     private function userPercentage(){
@@ -67,7 +71,7 @@ class StatisticControllers extends Controller
         $userCountDateNew = User::where('deleted_at', '=', '0')->where('create_date', '>', $dateNew)->count();
         $userCountDateOld = User::where('deleted_at', '=', '0')->whereBetween('create_date', [$dateOld , $dateNew])->count();
         if ($userCountDateOld === 0 ) {
-            $$userPercentage = $productCountDateNew * 100;
+            $userPercentage = $userCountDateNew * 100;
             return $userPercentage;
         }
         $userPercentage = number_format(($userCountDateNew / $userCountDateOld)*100 , 2 , '.' , '');

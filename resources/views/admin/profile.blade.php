@@ -150,12 +150,13 @@
                             <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Full
                                     Name:</strong> &nbsp; {{ $admin->F_name . ' ' . $admin->L_name }}</li>
                             <li class="list-group-item border-0 ps-0 text-sm"><strong
-                                    class="text-dark">Mobile:</strong> &nbsp; (+962) {{ $admin->phone }}</li>
+                                    class="text-dark">Mobile:</strong> &nbsp; (962) {{ $admin->phone }}</li>
                             <li class="list-group-item border-0 ps-0 text-sm"><strong
                                     class="text-dark">Email:</strong>
                                 &nbsp; {{ $admin->email }}</li>
                             <li class="list-group-item border-0 ps-0 text-sm"><strong
                                     class="text-dark">Gender:</strong> &nbsp; {{$admin->gender}}</li>
+                                    {{-- Social
                             <li class="list-group-item border-0 ps-0 pb-0">
                                 <strong class="text-dark text-sm">Social:</strong> &nbsp;
                                 <a class="btn btn-facebook btn-simple mb-0 ps-1 pe-2 py-0" href="javascript:;">
@@ -167,7 +168,7 @@
                                 <a class="btn btn-instagram btn-simple mb-0 ps-1 pe-2 py-0" href="javascript:;">
                                     <i class="fab fa-instagram fa-lg"></i>
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>
@@ -191,7 +192,7 @@
                             @foreach ($admins as $admin)
                                 <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
                                     <div class="avatar me-3">
-                                        <img src="{{ asset('image/admin/' . $admin->image) }}" alt="kal"
+                                        <img src="{{ asset('image/admin/' . $admin->image) }}" alt="kal" width="70px" height="50px"
                                             class="border-radius-lg shadow">
                                     </div>
                                     <div class="d-flex align-items-start flex-column justify-content-center">
@@ -203,7 +204,7 @@
                                                 {{ 'Manager' }} @endif
                                     </p>
                                 </div>
-                                <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a>
+                                {{-- <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a> --}}
                             </li>
                         @endforeach
                     </ul>

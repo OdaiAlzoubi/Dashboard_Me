@@ -16,19 +16,18 @@ class CourseController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->id)
-        {
-            $courses = Course::where('deleted_at', '=', '0')->where('category','=',$request->id)->latest(
+        if ($request->id) {
+            $courses = Course::where('deleted_at', '=', '0')->where('category', '=', $request->id)->latest(
                 'id'
-            )->paginate(5);
-        }else{
+            )->paginate(10);
+        } else {
             $courses = Course::where('deleted_at', '=', '0')->latest(
                 'id'
-            )->paginate(5);
+            )->paginate(10);
         }
-        $categories=CategoryCourse::get();
+        $categories = CategoryCourse::get();
         $count = 0;
-        return view('course.course.index', compact('courses', 'count','categories'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('course.course.index', compact('courses', 'count', 'categories'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -40,11 +39,9 @@ class CourseController extends Controller
     {
         $check = false;
         if ($request->id) {
-            $categories = CategoryCourse::where('id','=',$request->id)->first();
-            // dd($categories);
+            $categories = CategoryCourse::where('id', '=', $request->id)->first();
             $check = true;
-        }
-        else{
+        } else {
             $categories = CategoryCourse::all();
             if ($categories->count() === 0) {
                 return view('course.categoryCourse.create')->with('success', 'Please create a Category Course first.');
@@ -62,11 +59,11 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=>'required|max:50|string',
-            'presenter'=>'required|max:50|string',
-            'description'=>'nullable|max:1000',
-            'image'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'category'=>'required'
+            'name' => 'required|max:50|string',
+            'presenter' => 'required|max:50|string',
+            'description' => 'nullable|max:1000',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'category' => 'required'
         ]);
         $course = new Course;
         $course->name = $request->input('name');
@@ -88,9 +85,8 @@ class CourseController extends Controller
 
         $course->save();
         if ($request->check) {
-            return redirect()->route('categoryCourse.get.courses.by.category',$course->category)->with('success', 'This course has been Stored.');
-        }
-        else{
+            return redirect()->route('categoryCourse.get.courses.by.category', $course->category)->with('success', 'This course has been Stored.');
+        } else {
             return redirect()->route('Course.index')->with('success', 'This course has been Stored.');
         }
     }
@@ -117,12 +113,12 @@ class CourseController extends Controller
      * @param  \App\Models\Course\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request ,$id)
+    public function edit(Request $request, $id)
     {
         $check = $request->check;
         $course = Course::where('id', '=', $id)->first();
-        $categories = CategoryCourse::where('id','<>',$course->category)->get();
-        return view('course.course.edit', compact('course','categories','check'));
+        $categories = CategoryCourse::where('id', '<>', $course->category)->get();
+        return view('course.course.edit', compact('course', 'categories', 'check'));
     }
 
     /**
@@ -135,11 +131,11 @@ class CourseController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name'=>'required|max:50|string',
-            'presenter'=>'required|max:50|string',
-            'description'=>'nullable|max:1000',
-            'image'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'category'=>'required'
+            'name' => 'required|max:50|string',
+            'presenter' => 'required|max:50|string',
+            'description' => 'nullable|max:1000',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'category' => 'required'
         ]);
         $course = Course::where('id', '=', $id)->first();
         $course->name = $request->input('name');
@@ -160,9 +156,8 @@ class CourseController extends Controller
         $course->update();
 
         if ($request->check) {
-            return redirect()->route('categoryCourse.get.courses.by.category',$course->category)->with('success', 'This course has been Update.');
-        }
-        else{
+            return redirect()->route('categoryCourse.get.courses.by.category', $course->category)->with('success', 'This course has been Update.');
+        } else {
             return redirect()->route('Course.index')->with('success', 'This course has been Update.');
         }
     }
@@ -206,7 +201,7 @@ class CourseController extends Controller
     {
         $courses = Course::where('deleted_at', '=', '1')->latest(
             'id'
-        )->paginate(4);
+        )->paginate(10);
         $count = 0;
         return view('course.course.softDelete', compact('courses', 'count'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -214,16 +209,15 @@ class CourseController extends Controller
     // Get All Courses By Category Id
     public function getCoursesByCategoryId($id)
     {
-        $category = CategoryCourse::where('id','=',$id)->first();
+        $category = CategoryCourse::where('id', '=', $id)->first();
         $courses = Course::where('category', '=', $id)->where('deleted_at', '=', '0')->get();
         $count = 0;
         // dd($courses);
-        return view('course.categoryCourse.showCourses', compact('courses', 'count','id','category'));
+        return view('course.categoryCourse.showCourses', compact('courses', 'count', 'id', 'category'));
     }
 
     // Create Course Use Category
-    public function in(){}
-
-
-
+    public function in()
+    {
+    }
 }

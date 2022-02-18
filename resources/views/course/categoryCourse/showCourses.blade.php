@@ -46,7 +46,7 @@
                         <th scope="col">Image</th>
                         <th scope="col">Name</th>
                         <th scope="col">Presenter</th>
-                        <th scope="col">Description</th>
+                        <th scope="col" class="text-center">Description</th>
                         <th scope="col">Category</th>
                         <th scope="col" class="text-center">Action</th>
                     </tr>
@@ -70,8 +70,8 @@
                             <td>
                                 <p class="card-title container">{{ $course->presenter }}</p>
                             </td>
-                            <td>
-                                <p class="card-text container">{{ $course->description }}</p>
+                            <td  style=" " dir="rtl" lang="ar">
+                                <textarea class="card-text container" style="border-style:none;  height: auto; overflow: hidden;">{{ $course->description }}</textarea>
                             </td>
                             <td>
                                 <p class="card-text container">{{ $course->categoryCourse->name }}</p>

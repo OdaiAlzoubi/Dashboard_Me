@@ -11,7 +11,7 @@
 
     <div class="btn-group container gap-4 pt-3">
 
-        <a href="{{ route('user.add.notification') }}" class="btn btn-primary" aria-current="page">User Notification</a>
+        <a href="{{ route('user.add.notification') }}" class="btn btn-success" aria-current="page">User Notification</a>
         <a href="{{ route('product.add.notification') }}" class="btn btn-success">Product Notification</a>
         <a href="{{ route('report.notification') }}" class="btn btn-success">Report Video Notification</a>
 

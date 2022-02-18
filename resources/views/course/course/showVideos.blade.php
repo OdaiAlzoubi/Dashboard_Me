@@ -1,5 +1,6 @@
 @extends('layouts.layout')
 
+@section('title', 'Show Videos Course')
 @section('PageName', 'Show Videos Course')
 
 @section('content')
@@ -13,11 +14,11 @@
     <div class="card-header pb-0">
         <div class="row">
             <div class="col-6 d-flex align-items-center">
-                <h6>Category Course</h6>
+                <h6>Category Course , {{$course->name}}</h6>
             </div>
             <div class="col-6 text-end">
                 <a href="{{ route('Course.index') }}" class="btn btn-secondary" aria-current="page">Back</a>
-                <a href="{{ route('video.create') }}" class="btn btn-primary">Add video to Course</a>
+                <a href="{{ route('video.create', ['id'=> $id]) }}" class="btn btn-primary">Add video to Course</a>
             </div>
         </div>
     </div>
@@ -45,7 +46,7 @@
                                 <p>{{ ++$count }}</p>
                             </th>
                             <td>
-                                <h6 class="card-title container">{{ $video->name }}</h6>
+                                <p class="card-title container">{{ $video->name }}</p>
                             </td>
                             <td>
 
@@ -56,10 +57,10 @@
                                     allowfullscreen></iframe>
                             </td>
                             <td>
-                                <h6 class="card-title container">{{ $video->video_Order }}</h6>
+                                <p class="card-title container">{{ $video->video_order }}</p>
                             </td>
                             <td>
-                                <h6 class="card-title container">{{ $video->course->name }}</h6>
+                                <p class="card-title container">{{ $video->course->name }}</p>
                             </td>
                             <td class="text-center">
                                 {{--  --}}
